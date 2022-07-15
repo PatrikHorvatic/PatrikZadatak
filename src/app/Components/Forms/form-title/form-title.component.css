@@ -1,0 +1,17 @@
+:host {
+	/* text-align: center !important; */
+
+	/* Pošto je parent komponenta flex, za centar koristim align-self */
+	align-self: center !important;
+}
+
+h1 {
+	display: block;
+	width: 100%;
+	height: 40px;
+	text-align: center;
+
+	margin: 40px 0px 40px 0px;
+
+	color: var(--black);
+}

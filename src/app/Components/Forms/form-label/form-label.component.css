@@ -1,0 +1,10 @@
+:host {
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+label {
+	margin-top: 10px;
+	margin-bottom: 10px;
+	font-size: 18px !important;
+}

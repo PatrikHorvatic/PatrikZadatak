@@ -1,1 +1,105 @@
 /* You can add global styles to this file, and also import other style files */
+
+
+/* --- BOJE --- */
+/* --- BOJE --- */
+/* --- BOJE --- */
+:root {
+  --FORM-BACKGROUND: #ffbd71;
+  --FORM-BUTTON-HOVER: #f8f8f8;
+
+  --NO-BACKGROUND: #ffffff00;
+  --BLACK: #111111;
+
+
+  --INPUT-SHADOW: #959595;
+}
+
+
+/* --- FONTOVI --- */
+/* --- FONTOVI --- */
+/* --- FONTOVI --- */
+
+@font-face {
+    font-family: "Inter";
+    src: url(./assets/fonts/Inter-Regular.ttf) format("truetype");
+}
+
+@font-face {
+    font-family: "Inter-Bold";
+    src:url(./assets/fonts/Inter-Bold.ttf) format("truetype");
+}
+
+@font-face {
+    font-family: "Inter-Medium";
+    src: local("Inter-Medium"), url(./assets/fonts/Inter-Medium.ttf) format("truetype");
+}
+
+
+/* --- TRAJANJE ANIMACIJA ZA DIREKTIVE ANIMIRANJA --- */
+
+.animate__animated.animate__fadeIn {
+  --animate-duration: 0.6s;
+}
+
+.animate__animated.animate__fadeInDown {
+  --animate-duration: 1.5s;
+}
+
+.animate__animated.animate__fadeInDownBig {
+  --animate-duration: 1.5s;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+* {
+  font-family: "Inter";
+ }
+
+ body {
+  margin: 0;
+  padding: 0;
+ }
+
+
+
+
+/* Klasa se dodjeljuje svim inputima radi ujednačenosti u projektu*/
+.input-common {
+  border: 1px solid white;
+  border-radius: 14px;
+  
+  /* Prevencija širenja inputa kod dodavanja paddinga */
+  box-sizing: border-box !important; 
+  /* padding-left: 20px; */
+  /* padding-right: 20px; */
+
+  padding: 3px 15px 3px 15px;
+  /* margin: 3px 10px 3px 10px; */
+  transition: box-shadow linear 0.1s;
+}
+
+
+.button-common {
+  position: relative;
+  display: inline-block;
+
+  width: 200px;
+  height: 40px;
+
+  border: 1px solid white;
+  border-radius: 16px;
+
+  background-color: white;
+
+}

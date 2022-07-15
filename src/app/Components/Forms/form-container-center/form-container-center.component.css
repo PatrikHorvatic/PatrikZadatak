@@ -1,0 +1,27 @@
+.form-containter-container {
+	position: relative;
+
+	/* Centriranje */
+	display: flex;
+  	justify-content: center;
+  	align-items: center;
+
+	width: 100vw !important;
+	height: 100vh !important;
+
+}
+
+.form-container-center {	
+	display: flex;
+  	justify-content: center;
+  	align-items: flex-start;
+	flex-direction: column;
+
+	width: 600px !important;
+	height: 600px !important;
+
+	padding: 50px;
+
+	background-color: var(--FORM-BACKGROUND);
+	border-radius: 20px;
+}
