@@ -1,7 +1,7 @@
-export enum ATM {
-	BESKONTAKTNI = 0,
-	UPLATNO_ISPLATNI = 1,
-	DNEVNO_NOCNI = 2,
-	TREZOR = 3,
-	KOVINOMAT = 4
+export enum ATMType {
+	BESKONTAKTNI = "Beskontaktni",
+	UPLATNO_ISPLATNI = "Uplatno-isplatni",
+	DNEVNO_NOCNI = "Dnevno-noćni",
+	TREZOR = "Trezor",
+	KOVINOMAT = "Kovinomat"
 }

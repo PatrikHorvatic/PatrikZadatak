@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core';
-import { UserType } from '../Enums/user-type';
 import { IUser } from '../Interfaces/user';
 import { UsersService } from './users.service';
 
@@ -12,6 +11,9 @@ export class AuthService {
 
   constructor(private users: UsersService) { }
 
+  /**Metoda služi za provjeru unesenih korisničkih podataka prilikom prijave.
+   * 
+  */
   public provjeriLoginPodatke(korisnickoIme: string, lozinka: string): Promise<IUser> {
     return new Promise((resolve, reject) => {
 
@@ -23,7 +25,7 @@ export class AuthService {
         const korisnik = listaKorisnika[k];
 
         if (korisnik.korisnickoIme === korisnickoIme && korisnik.lozinka === lozinka) {
-          console.log("Našel sam korisnika");
+          console.log("Našao sam korisnika");
 
           this.prijavljenKorisnik = korisnik;
           break;
@@ -34,6 +36,7 @@ export class AuthService {
       console.log(this.prijavljenKorisnik);
 
 
+      // Tu je setTimeout() da simulira API poziv
       setTimeout(() => {
         if (this.prijavljenKorisnik) {
           resolve(this.prijavljenKorisnik);

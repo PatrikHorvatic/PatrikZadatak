@@ -11,5 +11,11 @@ export const Environment = {
 
 	toast: {
 		duration: 2980
+	},
+
+	/**Vrijednosti su u milisekundama */
+	delays: {
+		min: 500,
+		max: 2000
 	}
 }

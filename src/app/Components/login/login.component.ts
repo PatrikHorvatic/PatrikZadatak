@@ -34,8 +34,8 @@ export class LoginComponent implements OnInit {
 
   public prijaviKorisnika() {
 
-    console.log(this.korisnickoIme);
-    console.log(this.lozinka);
+    // console.log(this.korisnickoIme);
+    // console.log(this.lozinka);
 
     if (this.provjeriPodatkeZaPrijavu()) {
       this.showLoadingModal = true;
@@ -76,7 +76,12 @@ export class LoginComponent implements OnInit {
 
 
 
-  /**Medtoda služi za provjeru unosa varijabli za prijavu. */
+  /**Metoda služi za provjeru unosa varijabli za prijavu.
+   * 
+   * * Ne prihvaća se prazno korisničko ime.
+   * * Ne prihvaća se prazna lozinka.
+   * 
+  */
   private provjeriPodatkeZaPrijavu() {
 
     // radi se provjera unosa radi animiranja elemenata

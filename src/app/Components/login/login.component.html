@@ -1,17 +1,17 @@
-<app-loading *ngIf="showLoadingModal"></app-loading>
-<app-toast *ngIf="showToast" [(show)]="showToast" [message]="toastMessage"></app-toast>
+  <app-loading *ngIf="showLoadingModal"></app-loading>
+  <app-toast *ngIf="showToast" [(show)]="showToast" [message]="toastMessage"></app-toast>
 
-<app-form-container-center>
-  <app-form-title text="Dobrodošli!"></app-form-title>
+  <app-form-container-center>
+    <app-form-title text="Dobrodošli!"></app-form-title>
 
-  <app-form-label text="Korisničko ime"></app-form-label>
-  <app-form-text placeholder="Korisničko ime" [(text)]="korisnickoIme" [(pulseAnimation)]="pulseUsername">
-  </app-form-text>
+    <app-form-label text="Korisničko ime"></app-form-label>
+    <app-form-text placeholder="Korisničko ime" [(text)]="korisnickoIme" [(pulseAnimation)]="pulseUsername">
+    </app-form-text>
 
-  <app-form-label text="Lozinka"></app-form-label>
-  <app-form-password placeholder="Lozinka" [(password)]="lozinka" [(pulseAnimation)]="pulsePassword">
-  </app-form-password>
+    <app-form-label text="Lozinka"></app-form-label>
+    <app-form-password placeholder="Lozinka" [(password)]="lozinka" [(pulseAnimation)]="pulsePassword">
+    </app-form-password>
 
-  <app-form-button text="Prijava" (buttonClicked)="prijaviKorisnika()"></app-form-button>
+    <app-form-button text="Prijava" (buttonClicked)="prijaviKorisnika()"></app-form-button>
 
-</app-form-container-center>
+  </app-form-container-center>
