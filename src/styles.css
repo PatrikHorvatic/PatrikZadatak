@@ -50,6 +50,10 @@
   --animate-duration: 1.5s;
 }
 
+.animate__animated.animate__pulse {
+  --animate-duration: 0.3s;
+}
+
 
 
 

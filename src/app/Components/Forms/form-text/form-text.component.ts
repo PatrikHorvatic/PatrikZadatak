@@ -1,11 +1,13 @@
-import { Component, ElementRef, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges } from '@angular/core';
+import { Environment } from 'src/app/Environment/environment';
 
 @Component({
   selector: 'app-form-text',
   templateUrl: './form-text.component.html',
   styleUrls: ['./form-text.component.css']
 })
-export class FormTextComponent implements OnInit {
+export class FormTextComponent implements OnInit, OnChanges {
+
 
   // PLACEHOLDER ZA INPUT
   @Input() placeholder: string = "";
@@ -15,17 +17,32 @@ export class FormTextComponent implements OnInit {
   @Input() text: string = "";
   @Output() textChange = new EventEmitter<string>();
 
-  constructor(private nativeElement: ElementRef) { }
+  // 2-WAY BINDING
+  @Input() pulseAnimation: boolean = false;
+  @Output() pulseAnimationChange = new EventEmitter<boolean>();
 
-
+  constructor() { }
 
   ngOnInit(): void {
-    console.log(this.nativeElement.nativeElement);
   }
 
 
-  change(e: string) {
+  ngOnChanges(changes: SimpleChanges): void {
+    // console.log(changes);
 
+    if (changes["pulseAnimation"]) {
+      if (changes["pulseAnimation"].currentValue === true) {
+        setTimeout(() => {
+          this.pulseAnimation = false;
+          this.pulseAnimationChange.emit(false);
+        }, Environment.animacija.pulse);
+      }
+    }
+
+  }
+
+  change(e: string) {
+    this.textChange.emit(e);
   }
 
 }

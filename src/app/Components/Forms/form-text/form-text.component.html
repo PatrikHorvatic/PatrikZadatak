@@ -1,2 +1,2 @@
 <input class="input-common" type="text" name="text" [placeholder]="placeholder" [(ngModel)]="text"
-  (ngModelChange)="change($event)"><br>
+  (ngModelChange)="change($event)" [ngClass]="{'animate__animated animate__pulse' : pulseAnimation}"><br>

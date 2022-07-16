@@ -13,6 +13,11 @@ import { FormTitleComponent } from './Components/Forms/form-title/form-title.com
 import { FadeInDownDirective } from './Directives/fade-in-down.directive';
 import { FormsModule } from '@angular/forms';
 import { FadeInDownBigDirective } from './Directives/fade-in-down-big.directive';
+import { LoadingComponent } from './Components/Modals/loading/loading.component';
+import { LoginComponent } from './Components/login/login.component';
+import { AdminComponent } from './Components/admin/admin.component';
+import { UserComponent } from './Components/user/user.component';
+import { ToastComponent } from './Components/Modals/toast/toast.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +30,12 @@ import { FadeInDownBigDirective } from './Directives/fade-in-down-big.directive'
     FormButtonComponent,
     FormTitleComponent,
     FadeInDownDirective,
-    FadeInDownBigDirective
+    FadeInDownBigDirective,
+    LoadingComponent,
+    LoginComponent,
+    AdminComponent,
+    UserComponent,
+    ToastComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,7 @@
+export enum ATM {
+	BESKONTAKTNI = 0,
+	UPLATNO_ISPLATNI = 1,
+	DNEVNO_NOCNI = 2,
+	TREZOR = 3,
+	KOVINOMAT = 4
+}

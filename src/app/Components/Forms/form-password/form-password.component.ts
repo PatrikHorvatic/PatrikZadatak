@@ -1,16 +1,23 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges } from '@angular/core';
+import { Environment } from 'src/app/Environment/environment';
 
 @Component({
   selector: 'app-form-password',
   templateUrl: './form-password.component.html',
   styleUrls: ['./form-password.component.css']
 })
-export class FormPasswordComponent implements OnInit {
+export class FormPasswordComponent implements OnInit, OnChanges {
 
   @Input() placeholder: string = "";
 
+  // 2-way-binding
   @Input() password: string = "";
   @Output() passwordChange = new EventEmitter<string>();
+
+
+  // 2-WAY BINDING
+  @Input() pulseAnimation: boolean = false;
+  @Output() pulseAnimationChange = new EventEmitter<boolean>();
 
 
   /**Zastavica */
@@ -19,9 +26,23 @@ export class FormPasswordComponent implements OnInit {
   constructor() { }
 
 
-
   ngOnInit(): void {
     this.toggleState = false;
+  }
+
+
+  ngOnChanges(changes: SimpleChanges): void {
+    // console.log(changes);
+
+    if (changes["pulseAnimation"]) {
+      if (changes["pulseAnimation"].currentValue === true) {
+        setTimeout(() => {
+          this.pulseAnimation = false;
+          this.pulseAnimationChange.emit(false);
+        }, Environment.animacija.pulse);
+      }
+    }
+
   }
 
 
@@ -31,5 +52,8 @@ export class FormPasswordComponent implements OnInit {
   }
 
 
+  passwordChanged(e: string) {
+    this.passwordChange.emit(e);
+  }
 
 }
