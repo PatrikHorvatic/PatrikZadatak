@@ -20,7 +20,7 @@ export class UsersService {
     },
     {
       korisnickoIme: "admin",
-      lozinka: "dugapseudonasumicnalozinka",
+      lozinka: "admin",
       type: UserType.ADMIN
     },
     {

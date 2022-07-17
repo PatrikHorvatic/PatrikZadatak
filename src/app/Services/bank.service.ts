@@ -8,7 +8,7 @@ import { ATM } from '../Interfaces/atm';
 })
 export class BankService {
 
-  public atmList: Array<ATM> = [
+  private atmList: Array<ATM> = [
     {
       redniBroj: 1,
       vrstaBankomata: ATMType.BESKONTAKTNI,
@@ -113,19 +113,20 @@ export class BankService {
       adresa: "",
       napomena: "",
     },
-
-  ]
+  ];
 
   constructor() { }
 
 
-  /**
-   * dohvatiListuBankomata
-   */
-  public dohvatiListuBankomata() {
-    setTimeout(() => {
-      return this.atmList;
-    }, Math.floor(Math.random() * (Environment.delays.max - Environment.delays.min + 1) + Environment.delays.min));
+  public dohvatiListuBankomata(): Promise<Array<ATM>> {
+    return new Promise((resolve, reject) => {
+
+
+      setTimeout(() => {
+        resolve(this.atmList);
+      }, Math.floor(Math.random() * (Environment.delays.max - Environment.delays.min + 1) + Environment.delays.min));
+
+    });
   }
 
 

@@ -17,7 +17,12 @@ import { LoadingComponent } from './Components/Modals/loading/loading.component'
 import { LoginComponent } from './Components/login/login.component';
 import { AdminComponent } from './Components/admin/admin.component';
 import { UserComponent } from './Components/user/user.component';
-import { ToastComponent } from './Components/Modals/toast/toast.component';
+import { ToastComponent } from './Components/UI/toast/toast.component';
+import { UserNavigationComponent } from './Components/Navigation/user-navigation/user-navigation.component';
+import { AdminNavigationComponent } from './Components/Navigation/admin-navigation/admin-navigation.component';
+import { NavigationContainerComponent } from './Components/Navigation/navigation-container/navigation-container.component';
+import { SpinnerComponent } from './Components/UI/spinner/spinner.component';
+import { AppBackgroundComponent } from './Components/UI/app-background/app-background.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +40,12 @@ import { ToastComponent } from './Components/Modals/toast/toast.component';
     LoginComponent,
     AdminComponent,
     UserComponent,
-    ToastComponent
+    ToastComponent,
+    UserNavigationComponent,
+    AdminNavigationComponent,
+    NavigationContainerComponent,
+    SpinnerComponent,
+    AppBackgroundComponent
   ],
   imports: [
     BrowserModule,

@@ -40,16 +40,42 @@ export class LoginComponent implements OnInit {
     if (this.provjeriPodatkeZaPrijavu()) {
       this.showLoadingModal = true;
 
-      console.log("Nastavljam prijavu");
 
       this.auth.provjeriLoginPodatke(this.korisnickoIme, this.lozinka)
         .then(response => {
 
+          console.log(response);
+
+
           if (response.type === UserType.ADMIN) {
-            this.router.navigate(['/admin']);
+
+            this.showLoadingModal = false;
+            console.log("ADMIN");
+
+            this.router.navigate(['/admin'])
+              .then(res => {
+                console.log(res);
+
+              })
+              .catch(err => {
+                console.log(err);
+              })
+              .finally(() => {
+
+              });
           }
           if (response.type === UserType.USER) {
-            this.router.navigate(['/user']);
+            this.router.navigate(['/user'], {})
+              .then(res => {
+                console.log(res);
+
+              })
+              .catch(err => {
+                console.log(err);
+              })
+              .finally(() => {
+
+              });
           }
 
 

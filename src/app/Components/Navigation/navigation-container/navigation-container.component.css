@@ -1,0 +1,13 @@
+:host {
+	display: block;
+	position: relative;
+	
+	overflow: hidden !important;
+	background-color: var(--NAVIGATION-BACKGROUND);
+	
+	width: 100vw !important;
+	height: 50px;
+	
+	margin: 0;
+	padding: 0;
+}

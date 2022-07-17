@@ -20,10 +20,15 @@ export class AuthGuard implements CanActivate, CanActivateChild, CanDeactivate<u
 
     this.authService.provjeriAkoJeKorisnikPrijavljen(route.data["USER_TYPE"])
       .then(response => {
+        console.log("Korisnik je prijavljen");
 
+        return true;
       })
       .catch(error => {
+        console.log("Korisnik nije prijavljen");
+
         this.router.navigate(['/prijava']);
+        return false;
       })
       .finally(() => {
 

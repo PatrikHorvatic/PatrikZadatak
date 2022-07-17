@@ -42,7 +42,8 @@ export class AuthService {
           resolve(this.prijavljenKorisnik);
         }
         else {
-          reject(false);
+          resolve(this.prijavljenKorisnik);
+          // reject(false);
         }
       }, 1000);
 
@@ -54,6 +55,10 @@ export class AuthService {
 
 
   public provjeriAkoJeKorisnikPrijavljen(type: number): Promise<boolean> {
+
+    console.log("ZOVEM provjeriAkoJeKorisnikPrijavljen u AuthService");
+
+
     return new Promise((resolve, reject) => {
 
       if (!this.provjeriPrijavuKorisnika()) {
@@ -63,7 +68,10 @@ export class AuthService {
       else {
         console.log("PRIMIL SAM TIP " + type);
         if (this.prijavljenKorisnik.type === type) {
-
+          resolve(true);
+        }
+        else {
+          reject(false);
         }
       }
 
@@ -76,8 +84,11 @@ export class AuthService {
 
 
 
-  private provjeriPrijavuKorisnika() {
-    return Boolean(this.prijavljenKorisnik);
+  private provjeriPrijavuKorisnika(): boolean {
+    console.log(this.prijavljenKorisnik !== null);
+    console.log(this.prijavljenKorisnik !== undefined);
+
+    return this.prijavljenKorisnik !== null || this.prijavljenKorisnik !== undefined;
   }
 
 

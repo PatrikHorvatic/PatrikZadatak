@@ -1,73 +1,51 @@
-  @-webkit-keyframes fadeIn {
-    from {
-      opacity: 0
-    }
-
-    to {
-      opacity: 1
-    }
+@-webkit-keyframes fadeIn {
+  from {
+    opacity: 0
   }
 
-  @keyframes fadeIn {
-    from {
-      opacity: 0
-    }
-
-    to {
-      opacity: 1
-    }
-  }
-
-
-
-@keyframes rotate-spinner {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
+  to {
+    opacity: 1
   }
 }
+
+@keyframes fadeIn {
+  from {
+    opacity: 0
+  }
+
+  to {
+    opacity: 1
+  }
+}
+
+
 
 :host {
-    position: fixed;
-    z-index: 1;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-    background: rgba(42, 42, 42, 0.822);
-	-webkit-animation-name: fadeIn;
-    -webkit-animation-duration: 0.8s;
-    animation-name: fadeIn;
-    animation-duration: 0.8s
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background: rgba(42, 42, 42, 0.822);
+  -webkit-animation-name: fadeIn;
+  -webkit-animation-duration: 0.8s;
+  animation-name: fadeIn;
+  animation-duration: 0.8s
 }
-
 
 .dis-block {
   display: block;
 }
 
 .modal-loading-spinner-container {
-   position: relative;
+  position: relative;
 
-	display: flex;
-	justify-content: center;
-	align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
-   height: 100% !important;
-   width: 100% !important;
-}
-
-.modal-loading-spinner {
-	content: " ";
-	display: flex;
-	width: 64px;
-	height: 64px;
-	margin: 8px;
-	border-radius: 50%;
-	border: 6px solid #fff;
-	border-color: #fff transparent #fff transparent;
-	animation: rotate-spinner 1.2s linear infinite;
+  height: 100% !important;
+  width: 100% !important;
 }
