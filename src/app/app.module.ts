@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -23,6 +24,13 @@ import { AdminNavigationComponent } from './Components/Navigation/admin-navigati
 import { NavigationContainerComponent } from './Components/Navigation/navigation-container/navigation-container.component';
 import { SpinnerComponent } from './Components/UI/spinner/spinner.component';
 import { AppBackgroundComponent } from './Components/UI/app-background/app-background.component';
+import { UnosBankomataComponent } from './Components/admin/unos-bankomata/unos-bankomata.component';
+import { ContentPaddingComponent } from './Components/UI/content-padding/content-padding.component';
+import { TableContainerComponent } from './Components/UI/table-container/table-container.component';
+import { AdminPocetnaComponent } from './Components/admin/admin-pocetna/admin-pocetna.component';
+import { FormContainerComponent } from './Components/Forms/form-container/form-container.component';
+import { ConfirmComponent } from './Components/Modals/confirm/confirm.component';
+import { IzmjenaBankomataComponent } from './Components/admin/izmjena-bankomata/izmjena-bankomata.component';
 
 @NgModule({
   declarations: [
@@ -45,10 +53,18 @@ import { AppBackgroundComponent } from './Components/UI/app-background/app-backg
     AdminNavigationComponent,
     NavigationContainerComponent,
     SpinnerComponent,
-    AppBackgroundComponent
+    AppBackgroundComponent,
+    UnosBankomataComponent,
+    ContentPaddingComponent,
+    TableContainerComponent,
+    AdminPocetnaComponent,
+    FormContainerComponent,
+    ConfirmComponent,
+    IzmjenaBankomataComponent
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     AppRoutingModule,
     FormsModule
   ],

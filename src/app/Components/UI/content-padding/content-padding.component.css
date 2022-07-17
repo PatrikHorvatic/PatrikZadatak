@@ -1,0 +1,11 @@
+:host {
+	position: relative;
+	display: block;
+
+	width: 100% !important;
+	height: auto;
+
+	box-sizing: border-box;
+
+	padding: 40px !important;
+}

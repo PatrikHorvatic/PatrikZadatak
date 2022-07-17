@@ -1,0 +1,31 @@
+th {
+	margin: 0;
+	padding: 0;
+	height: 40px;
+	color: white;
+	outline: 1px solid var(--TABLE-HEADER-BACKGROUND);
+
+	transition: all 0.2s linear;
+}
+
+th:hover {
+	color: var(--FORM-BACKGROUND) !important;
+}
+
+tr:first-child {
+	border-collapse: collapse;
+	background-color: var(--TABLE-HEADER-BACKGROUND);
+}
+
+
+th>i {
+	display: inline-block;
+	margin-left: 5px;
+	margin-right: 5px;
+	color: var(--FORM-BACKGROUND) !important;
+
+}
+
+th>i:hover {
+	cursor: pointer;
+}

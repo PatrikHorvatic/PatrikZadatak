@@ -12,6 +12,8 @@
   --BLACK: #111111;
 
   --NAVIGATION-BACKGROUND: #000000;
+  --TABLE-HEADER-BACKGROUND: #00000093;
+  --TABLE-BACKGROUND: #00000077;
 
 
   --INPUT-SHADOW: #959595;
@@ -23,18 +25,18 @@
 /* --- FONTOVI --- */
 
 @font-face {
-    font-family: "Inter";
-    src: url(./assets/fonts/Inter-Regular.ttf) format("truetype");
+  font-family: "Inter";
+  src: url(./assets/fonts/Inter-Regular.ttf) format("truetype");
 }
 
 @font-face {
-    font-family: "Inter-Bold";
-    src:url(./assets/fonts/Inter-Bold.ttf) format("truetype");
+  font-family: "Inter-Bold";
+  src: url(./assets/fonts/Inter-Bold.ttf) format("truetype");
 }
 
 @font-face {
-    font-family: "Inter-Medium";
-    src: local("Inter-Medium"), url(./assets/fonts/Inter-Medium.ttf) format("truetype");
+  font-family: "Inter-Medium";
+  src: local("Inter-Medium"), url(./assets/fonts/Inter-Medium.ttf) format("truetype");
 }
 
 
@@ -70,12 +72,12 @@
 
 * {
   font-family: "Inter";
- }
+}
 
- body {
+body {
   margin: 0;
   padding: 0;
- }
+}
 
 
 
@@ -84,9 +86,9 @@
 .input-common {
   border: 1px solid white;
   border-radius: 14px;
-  
+
   /* Prevencija širenja inputa kod dodavanja paddinga */
-  box-sizing: border-box !important; 
+  box-sizing: border-box !important;
   /* padding-left: 20px; */
   /* padding-right: 20px; */
 

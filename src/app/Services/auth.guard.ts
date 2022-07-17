@@ -43,6 +43,38 @@ export class AuthGuard implements CanActivate, CanActivateChild, CanDeactivate<u
   canActivateChild(
     childRoute: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
+
+
+    // console.log(childRoute);
+    // console.log(state);
+
+    this.authService.provjeriAkoJeKorisnikPrijavljen(childRoute.data["USER_TYPE"])
+      .then(response => {
+        console.log("Korisnik je prijavljen");
+
+        this.authService.provjeriAkoJeAktivanKorisnikAdmin(childRoute.data["USER_TYPE"])
+          .then(resp => {
+            return true;
+          })
+          .catch(err => {
+            console.log(err);
+            return false;
+          })
+          .finally(() => {
+
+          });
+
+      })
+      .catch(error => {
+        console.log("Korisnik nije prijavljen");
+
+        this.router.navigate(['/prijava']);
+        return false;
+      })
+      .finally(() => {
+
+      });
+
     return true;
   }
 

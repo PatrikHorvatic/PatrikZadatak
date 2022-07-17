@@ -1,5 +1,6 @@
 <app-navigation-container>
-  <a>Početna</a>
-  <a>Unos bankomata</a>
-  <a>Odjava</a>
+  <a routerLink="/admin" routerLinkActive="dodaj-border" [routerLinkActiveOptions]="{exact: true}">Početna</a>
+  <a routerLink="/admin/unos" routerLinkActive="dodaj-border" [routerLinkActiveOptions]="{exact: true}">Unos
+    bankomata</a>
+  <a routerLink="">Odjava</a>
 </app-navigation-container>

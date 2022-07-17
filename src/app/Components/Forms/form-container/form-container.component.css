@@ -1,0 +1,12 @@
+:host {
+	position: relative;
+	display: block;
+
+	margin: 0 auto !important;
+	padding: 50px;
+
+	max-width: 500px;
+	height: auto;
+	background-color: var(--FORM-BACKGROUND);
+	border-radius: 20px;
+}

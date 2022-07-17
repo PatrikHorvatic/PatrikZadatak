@@ -5,3 +5,9 @@ export enum ATMType {
 	TREZOR = "Trezor",
 	KOVINOMAT = "Kovinomat"
 }
+
+
+export enum ATMState {
+	U_FUNKCIJI = "U funkciji",
+	IZVAN_FUNKCIJE = "Izvan funkcije"
+}

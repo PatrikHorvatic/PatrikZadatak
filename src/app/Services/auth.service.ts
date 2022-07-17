@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { UserType } from '../Enums/user-type';
 import { IUser } from '../Interfaces/user';
 import { UsersService } from './users.service';
 
@@ -80,6 +81,40 @@ export class AuthService {
 
     });
   }
+
+
+  public provjeriAkoJeAktivanKorisnikAdmin(type: number): Promise<boolean> {
+    return new Promise((resolve, reject) => {
+
+      console.log("PRIMIL SAM TIP " + type);
+      if (this.prijavljenKorisnik.type === UserType.ADMIN) {
+        resolve(true);
+      }
+      else {
+        reject(false);
+      }
+
+
+    });
+  }
+
+
+  public provjeriAkoJeAktivanKorisnikUser(type: number): Promise<boolean> {
+    return new Promise((resolve, reject) => {
+
+      console.log("PRIMIL SAM TIP " + type);
+      if (this.prijavljenKorisnik.type === UserType.USER) {
+        resolve(true);
+      }
+      else {
+        reject(false);
+      }
+
+
+    });
+  }
+
+
 
 
 

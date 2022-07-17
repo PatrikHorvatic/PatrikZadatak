@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { ATMType } from '../Enums/atm';
+import { ATMState, ATMType } from '../Enums/atm';
 import { Environment } from '../Environment/environment';
 import { ATM } from '../Interfaces/atm';
 
@@ -8,7 +8,7 @@ import { ATM } from '../Interfaces/atm';
 })
 export class BankService {
 
-  private atmList: Array<ATM> = [
+  public atmList: Array<ATM> = [
     {
       redniBroj: 1,
       vrstaBankomata: ATMType.BESKONTAKTNI,
@@ -20,7 +20,7 @@ export class BankService {
       redniBroj: 2,
       vrstaBankomata: ATMType.DNEVNO_NOCNI,
       adresa: "",
-      napomena: "",
+      napomena: null,
     },
 
     {
@@ -34,21 +34,21 @@ export class BankService {
       redniBroj: 4,
       vrstaBankomata: ATMType.TREZOR,
       adresa: "",
-      napomena: "",
+      napomena: null,
     },
 
     {
       redniBroj: 5,
       vrstaBankomata: ATMType.UPLATNO_ISPLATNI,
       adresa: "",
-      napomena: "",
+      napomena: null,
     },
 
     {
       redniBroj: 6,
       vrstaBankomata: ATMType.KOVINOMAT,
       adresa: "",
-      napomena: "",
+      napomena: null,
     },
 
     {
@@ -62,56 +62,56 @@ export class BankService {
       redniBroj: 8,
       vrstaBankomata: ATMType.BESKONTAKTNI,
       adresa: "",
-      napomena: "",
+      napomena: null,
     },
 
     {
       redniBroj: 9,
       vrstaBankomata: ATMType.BESKONTAKTNI,
       adresa: "",
-      napomena: "",
+      napomena: null,
     },
 
     {
       redniBroj: 10,
       vrstaBankomata: ATMType.BESKONTAKTNI,
       adresa: "",
-      napomena: "",
+      napomena: null,
     },
 
     {
       redniBroj: 11,
       vrstaBankomata: ATMType.BESKONTAKTNI,
       adresa: "",
-      napomena: "",
+      napomena: ATMState.IZVAN_FUNKCIJE,
     },
 
     {
       redniBroj: 12,
       vrstaBankomata: ATMType.UPLATNO_ISPLATNI,
       adresa: "",
-      napomena: "",
+      napomena: null,
     },
 
     {
       redniBroj: 13,
       vrstaBankomata: ATMType.BESKONTAKTNI,
       adresa: "",
-      napomena: "",
+      napomena: null,
     },
 
     {
       redniBroj: 14,
       vrstaBankomata: ATMType.TREZOR,
       adresa: "",
-      napomena: "",
+      napomena: ATMState.IZVAN_FUNKCIJE,
     },
 
     {
       redniBroj: 15,
       vrstaBankomata: ATMType.DNEVNO_NOCNI,
       adresa: "",
-      napomena: "",
+      napomena: null,
     },
   ];
 
@@ -128,6 +128,17 @@ export class BankService {
 
     });
   }
+
+
+  public unesiBankomat(): Promise<ATM> {
+    return new Promise((resolve, reject) => {
+
+
+
+
+    });
+  }
+
 
 
 }
