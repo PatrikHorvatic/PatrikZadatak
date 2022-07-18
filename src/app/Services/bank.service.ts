@@ -129,10 +129,21 @@ export class BankService {
   }
 
 
-  public unesiBankomat(): Promise<ATM> {
+  public unesiBankomat(rednibroj: number, odabranaVrstaBankomata: string, adresa: string): Promise<ATM> {
     return new Promise((resolve, reject) => {
 
+      if (this.provjeriJedinstvenostRednogBroja(rednibroj)) {
+        this.atmList.push({
+          redniBroj: rednibroj,
+          vrstaBankomata: odabranaVrstaBankomata,
+          adresa: adresa,
+          napomena: null
+        });
 
+      }
+      else {
+        reject("Redni broj bankomata je zauzet.")
+      }
 
 
     });
@@ -147,5 +158,41 @@ export class BankService {
 
     });
   }
+
+
+
+  private provjeriJedinstvenostRednogBroja(redniBroj: number): boolean {
+    // console.log(Boolean(this.atmList.filter(atm => atm.redniBroj === redniBroj).length));
+
+    if (this.atmList.filter(atm => atm.redniBroj === redniBroj).length === 0) {
+      return true;
+    }
+    else {
+      return false;
+    }
+
+  }
+
+
+  /**Metoda služi za provjeru postojanosti bankomata s određenim rednim brojem.
+   * 
+   * Metoda se poziva u BankGuardu kako bi se provjerila postojanost bankomata
+   */
+  public provjeriPostojanostRednogBroja(redniBroj: string): Promise<boolean> {
+    return new Promise((resolve, reject) => {
+
+      console.log(this.atmList.filter(atm => String(atm.redniBroj) === redniBroj).length === 0);
+
+
+      if (this.atmList.filter(atm => String(atm.redniBroj) === redniBroj).length === 0) {
+        reject(false);
+      }
+      else {
+        resolve(true);
+      }
+    });
+  }
+
+
 
 }

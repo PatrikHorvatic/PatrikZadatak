@@ -23,7 +23,6 @@ import { UserNavigationComponent } from './Components/Navigation/user-navigation
 import { AdminNavigationComponent } from './Components/Navigation/admin-navigation/admin-navigation.component';
 import { NavigationContainerComponent } from './Components/Navigation/navigation-container/navigation-container.component';
 import { SpinnerComponent } from './Components/UI/spinner/spinner.component';
-import { AppBackgroundComponent } from './Components/UI/app-background/app-background.component';
 import { UnosBankomataComponent } from './Components/admin/unos-bankomata/unos-bankomata.component';
 import { ContentPaddingComponent } from './Components/UI/content-padding/content-padding.component';
 import { TableContainerComponent } from './Components/UI/table-container/table-container.component';
@@ -34,19 +33,18 @@ import { IzmjenaBankomataComponent } from './Components/admin/izmjena-bankomata/
 import { PretragaBankomataComponent } from './Components/admin/pretraga-bankomata/pretraga-bankomata.component';
 import { FormSearchbarComponent } from './Components/Forms/form-searchbar/form-searchbar.component';
 import { FormSelectComponent } from './Components/Forms/form-select/form-select.component';
+import { FormNumberComponent } from './Components/Forms/form-number/form-number.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    FadeInDirective,
-    FormContainerCenterComponent,
-    FormLabelComponent,
-    FormTextComponent,
-    FormPasswordComponent,
-    FormButtonComponent,
-    FormTitleComponent,
-    FadeInDownDirective,
-    FadeInDownBigDirective,
+
+    FadeInDownDirective, FadeInDownBigDirective, FadeInDirective,
+
+    
+    FormContainerCenterComponent, FormLabelComponent, FormTextComponent, FormPasswordComponent, FormButtonComponent, FormTitleComponent,
+    FormSearchbarComponent, FormSelectComponent,
+
     LoadingComponent,
     LoginComponent,
     AdminComponent,
@@ -56,7 +54,6 @@ import { FormSelectComponent } from './Components/Forms/form-select/form-select.
     AdminNavigationComponent,
     NavigationContainerComponent,
     SpinnerComponent,
-    AppBackgroundComponent,
     UnosBankomataComponent,
     ContentPaddingComponent,
     TableContainerComponent,
@@ -65,8 +62,7 @@ import { FormSelectComponent } from './Components/Forms/form-select/form-select.
     ConfirmComponent,
     IzmjenaBankomataComponent,
     PretragaBankomataComponent,
-    FormSearchbarComponent,
-    FormSelectComponent
+    FormNumberComponent,
   ],
   imports: [
     BrowserModule,

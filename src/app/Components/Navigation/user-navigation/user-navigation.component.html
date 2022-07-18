@@ -1,5 +1,5 @@
 <app-navigation-container>
-  <a>Početna</a>
+  <a routerLink="/user" routerLinkActive="dodaj-border" [routerLinkActiveOptions]="{exact: true}">Početna</a>
   <a>Pretraga</a>
-  <a>Odjava</a>
+  <a (click)="userLogout()">Odjava</a>
 </app-navigation-container>

@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { AppBackgroundComponent } from './app-background.component';
+import { FormNumberComponent } from './form-number.component';
 
-describe('AppBackgroundComponent', () => {
-  let component: AppBackgroundComponent;
-  let fixture: ComponentFixture<AppBackgroundComponent>;
+describe('FormNumberComponent', () => {
+  let component: FormNumberComponent;
+  let fixture: ComponentFixture<FormNumberComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ AppBackgroundComponent ]
+      declarations: [ FormNumberComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(AppBackgroundComponent);
+    fixture = TestBed.createComponent(FormNumberComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

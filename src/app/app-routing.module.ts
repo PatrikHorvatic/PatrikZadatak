@@ -58,7 +58,7 @@ const routes: Routes = [
       {
         path: 'izmjena/:redniBroj',
         component: IzmjenaBankomataComponent,
-        canActivate: [BankGuard],
+        // canActivate: [BankGuard],
         data: {
           USER_TYPE: UserType.ADMIN
         }

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
+import { AuthService } from 'src/app/Services/auth.service';
 
 @Component({
   selector: 'app-admin-navigation',
@@ -8,9 +9,25 @@ import { Router, ActivatedRoute } from '@angular/router';
 })
 export class AdminNavigationComponent implements OnInit {
 
-  constructor(private router: Router, private activeRoute: ActivatedRoute) { }
+  constructor(private router: Router, private activeRoute: ActivatedRoute,
+    private authService: AuthService) { }
 
   ngOnInit(): void {
   }
 
+
+
+  userLogout() {
+    this.authService.odjaviKorisnika()
+      .then(resp => {
+        console.log("Uspješan logout");
+        this.router.navigate(['/prijava']);
+      })
+      .catch(err => {
+
+      })
+      .finally(() => {
+
+      });
+  }
 }

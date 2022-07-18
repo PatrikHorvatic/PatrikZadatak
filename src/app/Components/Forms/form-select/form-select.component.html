@@ -1,3 +1,4 @@
-<select name="vrstaBankomata" required [(ngModel)]="odabranaVrijednost" (ngModelChange)="emitirajOdabrano($event)">
+<select name="vrstaBankomata" [ngClass]="{'animate__animated animate__pulse' : pulseAnimation}"
+   [(ngModel)]="odabranaVrijednost" (ngModelChange)="emitirajOdabrano($event)">
   <option *ngFor="let v of listaVrijednosti" [value]="v">{{v}}</option>
 </select>

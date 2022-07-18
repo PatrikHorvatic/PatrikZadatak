@@ -3,16 +3,19 @@
 
 <app-content-padding>
   <app-form-container>
+    <app-form-label text="Redni broj"></app-form-label>
+    <app-form-number [(number)]="redniBroj" placeholder="Redni broj" [(pulseAnimation)]="pulseRedniBroj">
+    </app-form-number>
+
     <app-form-label text="Vrsta bankomata"></app-form-label>
-
-
     <app-form-select [(odabranaVrijednost)]="odabranaVrstaBankomata" [listaVrijednosti]="vrsteBankomata"
-      (odabranaVrijednostChange)="izmjeniVrstuBankomata($event)">
+      [(pulseAnimation)]="pulseVrstaBankomata" (odabranaVrijednostChange)="izmjeniVrstuBankomata($event)">
     </app-form-select>
 
 
     <app-form-label text="Adresa bankomata"></app-form-label>
-    <app-form-text [(text)]="adresaBankomata"></app-form-text>
+    <app-form-text [(text)]="adresaBankomata" placeholder="Adresa bankomata" [(pulseAnimation)]="pulseAdresaBankomata">
+    </app-form-text>
 
     <app-form-label text="Napomena"></app-form-label>
 

@@ -1,13 +1,13 @@
 import { Injectable } from '@angular/core';
+import { User } from '../Classes/user';
 import { UserType } from '../Enums/user-type';
-import { IUser } from '../Interfaces/user';
 
 @Injectable({
   providedIn: 'root'
 })
 export class UsersService {
 
-  public readonly userList: Array<IUser> = [
+  public readonly userList: Array<User> = [
     {
       korisnickoIme: "korisnik1",
       lozinka: "lozinka1",
@@ -33,7 +33,7 @@ export class UsersService {
   constructor() { }
 
 
-  public vratiListuKorisnika(): Array<IUser> {
+  public vratiListuKorisnika(): Array<User> {
     return this.userList;
   }
 

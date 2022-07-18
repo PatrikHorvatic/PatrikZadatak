@@ -2,7 +2,7 @@ import { ATMState, ATMType } from "../Enums/atm";
 
 export interface ATM {
 	redniBroj: number;
-	vrstaBankomata: ATMType,
+	vrstaBankomata: string,
 	adresa: string,
-	napomena: ATMState | null
+	napomena: string | null
 }

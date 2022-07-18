@@ -29,6 +29,8 @@ export class LoginComponent implements OnInit {
     private router: Router) { }
 
   ngOnInit(): void {
+    console.log(this.auth.prijavljenKorisnik);
+
   }
 
 

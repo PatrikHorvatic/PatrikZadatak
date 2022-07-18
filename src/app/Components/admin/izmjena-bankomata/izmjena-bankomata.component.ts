@@ -14,14 +14,8 @@ export class IzmjenaBankomataComponent implements OnInit {
     private activeRoute: ActivatedRoute) { }
 
   ngOnInit(): void {
-
     console.log(this.activeRoute);
-
     this.activeRoute.snapshot.params['redniBroj'];
-
-
-
-    
   }
 
 }
