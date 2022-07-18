@@ -69,7 +69,6 @@ export class AuthService {
 
     console.log("ZOVEM provjeriAkoJeKorisnikPrijavljen u AuthService");
 
-
     return new Promise((resolve, reject) => {
 
       if (!this.provjeriPrijavuKorisnika()) {

@@ -17,12 +17,20 @@ select {
 	font-family: Inter;
 	font-style: normal;
 	font-weight: 400;
-	font-size: 20px;
+	font-size: 14px;
 
 	border: 0;
 	border-radius: 16px;
 	padding-left: 10px;
 	transition: all 0.2s linear;
+}
+
+select::placeholder {
+	font-family: Inter;
+	font-style: normal;
+	font-weight: 400;
+	color: #858597;
+	font-size: 14px;
 }
 
 select:focus {

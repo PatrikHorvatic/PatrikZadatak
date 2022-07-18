@@ -129,7 +129,23 @@ export class BankService {
   }
 
 
-  public unesiBankomat(rednibroj: number, odabranaVrstaBankomata: string, adresa: string): Promise<ATM> {
+  public dohvatiPodatkeOBankomatu(redniBroj: number): Promise<ATM> {
+    return new Promise((resolve, reject) => {
+
+      let trazenBankomat = this.atmList.find(atm => atm.redniBroj === redniBroj);
+
+      if (typeof trazenBankomat === "undefined") {
+        reject("Nisam našao bankomat prema rednom broju!");
+      }
+      else {
+        resolve(trazenBankomat);
+      }
+    });
+  }
+
+
+
+  public unesiBankomat(rednibroj: number, odabranaVrstaBankomata: string, adresa: string): Promise<boolean> {
     return new Promise((resolve, reject) => {
 
       if (this.provjeriJedinstvenostRednogBroja(rednibroj)) {
@@ -140,6 +156,9 @@ export class BankService {
           napomena: null
         });
 
+        setTimeout(() => {
+          resolve(true);
+        }, Environment.delays.min);
       }
       else {
         reject("Redni broj bankomata je zauzet.")
@@ -149,19 +168,24 @@ export class BankService {
     });
   }
 
-
-
-
-  public dohvatiVrsteBankomata(): Promise<Array<any>> {
+  public izmjeniBankomat(rednibroj: number, odabranaVrstaBankomata: string, adresa: string, napomena: string | null): Promise<boolean> {
     return new Promise((resolve, reject) => {
 
+      let index = this.atmList.findIndex(atm => atm.redniBroj === rednibroj);
+
+      this.atmList[index].adresa = adresa;
+      this.atmList[index].redniBroj = rednibroj;
+      this.atmList[index].vrstaBankomata = odabranaVrstaBankomata;
+      this.atmList[index].napomena = napomena;
+
+      resolve(true);
 
     });
   }
 
 
 
-  private provjeriJedinstvenostRednogBroja(redniBroj: number): boolean {
+  public provjeriJedinstvenostRednogBroja(redniBroj: number): boolean {
     // console.log(Boolean(this.atmList.filter(atm => atm.redniBroj === redniBroj).length));
 
     if (this.atmList.filter(atm => atm.redniBroj === redniBroj).length === 0) {

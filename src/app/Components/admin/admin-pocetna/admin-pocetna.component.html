@@ -20,7 +20,7 @@
       <th>{{atm.napomena}}</th>
 
       <th>
-        <i class="fa fa-edit" aria-hidden="true" [routerLink]="['/admin', 'izmjena', atm.redniBroj]"></i>
+        <i class="fa fa-edit" aria-hidden="true" [routerLink]="['/admin/izmjena', atm.redniBroj]"></i>
         <i class="fa fa-trash" aria-hidden="true" (click)="potvrdiBrisanjeBankomata(atm)"></i>
       </th>
     </tr>

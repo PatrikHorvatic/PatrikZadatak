@@ -9,6 +9,7 @@ import { BankService } from 'src/app/Services/bank.service';
 })
 export class UnosBankomataComponent implements OnInit {
 
+  public showLoading: boolean = false;
   public showToast: boolean = false;
   public toastMessage!: string;
 
@@ -19,15 +20,24 @@ export class UnosBankomataComponent implements OnInit {
 
   public vrsteBankomata!: Array<string>;
 
-  public redniBroj!: number;
+  public redniBroj!: number | null;
   public odabranaVrstaBankomata!: any;
-  public adresaBankomata: string = "";
+  public adresaBankomata: string | null = "";
 
   constructor(private bank: BankService) { }
 
   ngOnInit(): void {
     this.vrsteBankomata = Object.values(ATMType);
+    this.showLoading = false;
+
+    this.dohvatiPodatkeOBankomatu()
   }
+
+  private dohvatiPodatkeOBankomatu() {
+    
+  }
+
+
 
   public pogledajOdabranuVrstu(e: any) {
     console.log(e);
@@ -40,8 +50,6 @@ export class UnosBankomataComponent implements OnInit {
 
 
   public unesiBankomat() {
-
-    this.showToast = false;
 
     if (!this.redniBroj) {
       this.pulseRedniBroj = true;
@@ -69,8 +77,16 @@ export class UnosBankomataComponent implements OnInit {
     console.log(this.odabranaVrstaBankomata);
     console.log(this.adresaBankomata);
 
+    this.showLoading = true;
+
     this.bank.unesiBankomat(this.redniBroj, this.odabranaVrstaBankomata, this.adresaBankomata)
       .then(uspjesnost => {
+        this.toastMessage = "Bankomat uspješno dodan!";
+        this.showToast = true;
+
+        this.redniBroj = null;
+        this.odabranaVrstaBankomata = null;
+        this.adresaBankomata = null;
 
       })
       .catch(error => {
@@ -80,7 +96,7 @@ export class UnosBankomataComponent implements OnInit {
 
       })
       .finally(() => {
-
+        this.showLoading = false;
       });
 
 

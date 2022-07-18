@@ -1,5 +1,5 @@
 <app-toast *ngIf="showToast" [(show)]="showToast" [message]="toastMessage"></app-toast>
-
+<app-loading *ngIf="showLoading" [(show)]="showLoading"></app-loading>
 
 <app-content-padding>
   <app-form-container>
@@ -16,9 +16,6 @@
     <app-form-label text="Adresa bankomata"></app-form-label>
     <app-form-text [(text)]="adresaBankomata" placeholder="Adresa bankomata" [(pulseAnimation)]="pulseAdresaBankomata">
     </app-form-text>
-
-    <app-form-label text="Napomena"></app-form-label>
-
 
     <app-form-button text="Unesi bankomat" (buttonClicked)="unesiBankomat()"></app-form-button>
 

@@ -1,3 +1,29 @@
+<app-toast *ngIf="showToast" [(show)]="showToast" [message]="toastMessage"></app-toast>
+<app-loading *ngIf="showLoading" [(show)]="showLoading"></app-loading>
+
 <app-content-padding>
-  <p>izmjena-bankomata works!</p>
+  <app-form-container>
+    <app-form-label text="Redni broj"></app-form-label>
+    <app-form-number [(number)]="redniBroj" placeholder="Redni broj" [(pulseAnimation)]="pulseRedniBroj">
+    </app-form-number>
+
+    <app-form-label text="Vrsta bankomata"></app-form-label>
+    <app-form-select [(odabranaVrijednost)]="odabranaVrstaBankomata" [listaVrijednosti]="vrsteBankomata"
+      [(pulseAnimation)]="pulseVrstaBankomata" (odabranaVrijednostChange)="izmjeniVrstuBankomata($event)">
+    </app-form-select>
+
+
+    <app-form-label text="Adresa bankomata"></app-form-label>
+    <app-form-text [(text)]="adresaBankomata" placeholder="Adresa bankomata" [(pulseAnimation)]="pulseAdresaBankomata">
+    </app-form-text>
+
+    <app-form-label text="Napomena"></app-form-label>
+    <app-form-select [(odabranaVrijednost)]="napomena" [listaVrijednosti]="vrsteNapomena"
+      [(pulseAnimation)]="pulseVrstaBankomata" (odabranaVrijednostChange)="izmjeniVrstuNapomene($event)">
+    </app-form-select>
+
+
+    <app-form-button text="Izmjeni bankomat" (buttonClicked)="izmjeniBankomat()"></app-form-button>
+
+  </app-form-container>
 </app-content-padding>
