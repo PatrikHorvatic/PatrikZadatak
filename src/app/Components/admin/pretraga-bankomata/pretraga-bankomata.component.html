@@ -1,8 +1,14 @@
 <app-content-padding>
+
+  <app-form-container>
+    <app-form-label text="Pretraži prema:"></app-form-label>
+    <app-form-select [listaVrijednosti]="searchOptions" [(odabranaVrijednost)]="chosenSearchOption" (odabranaVrijednostChange)="promjeniOpcijuFiltra($event)"></app-form-select>
+
+    <app-form-searchbar [(pretraga)]="searchTerm" (pretragaChange)="filtriraj($event)"></app-form-searchbar>
+  </app-form-container>
+
   <app-spinner *ngIf="!loadingComplete"></app-spinner>
-
-  <app-table-container *ngIf="loadingComplete">
-
+  <app-table-container *ngIf="loadingComplete && this.searchListATM.length > 0">
     <!-- Zaglavlje tablice -->
     <tr>
       <th>Redni broj</th>
@@ -12,8 +18,7 @@
       <th>Radnja</th>
     </tr>
 
-
-    <tr *ngFor="let atm of listATM">
+    <tr *ngFor="let atm of searchListATM">
       <th>{{atm.redniBroj}}</th>
       <th>{{atm.vrstaBankomata}}</th>
       <th>{{atm.adresa}}</th>
@@ -25,7 +30,6 @@
       </th>
     </tr>
 
-
-
   </app-table-container>
+
 </app-content-padding>

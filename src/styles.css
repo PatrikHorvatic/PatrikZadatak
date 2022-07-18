@@ -60,7 +60,26 @@
 
 
 
+::-webkit-scrollbar {
+  width: 10px;
+  background: var(--NAVIGATION-BACKGROUND);
+}
 
+/* Track */
+::-webkit-scrollbar-track {
+  border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: var(--FORM-BACKGROUND);
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #b30000;
+}
 
 
 
@@ -75,8 +94,14 @@
 }
 
 body {
+
+  overflow-x: hidden;
   margin: 0;
   padding: 0;
+  background-size: cover;
+  background-image: url(./assets/images/buildings_background.jpg);
+  background-attachment: fixed !important;
+  background-repeat: no-repeat;
 }
 
 

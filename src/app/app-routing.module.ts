@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { AdminPocetnaComponent } from './Components/admin/admin-pocetna/admin-pocetna.component';
 import { AdminComponent } from './Components/admin/admin.component';
 import { IzmjenaBankomataComponent } from './Components/admin/izmjena-bankomata/izmjena-bankomata.component';
+import { PretragaBankomataComponent } from './Components/admin/pretraga-bankomata/pretraga-bankomata.component';
 import { UnosBankomataComponent } from './Components/admin/unos-bankomata/unos-bankomata.component';
 import { LoginComponent } from './Components/login/login.component';
 import { UserComponent } from './Components/user/user.component';
@@ -43,6 +44,13 @@ const routes: Routes = [
       {
         path: 'unos',
         component: UnosBankomataComponent,
+        data: {
+          USER_TYPE: UserType.ADMIN
+        },
+      },
+      {
+        path: 'pretraga',
+        component: PretragaBankomataComponent,
         data: {
           USER_TYPE: UserType.ADMIN
         },

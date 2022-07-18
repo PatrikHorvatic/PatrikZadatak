@@ -1,18 +1,11 @@
-
 :host {
   font-family: -apple-system, Inter, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   box-sizing: border-box;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-
 }
 
 .content {
   min-width: 100% !important;
   min-height: 100% !important;
-  background-size: cover;
-  background-image: url(../assets/images/buildings_background.jpg);
 }
-
-
-

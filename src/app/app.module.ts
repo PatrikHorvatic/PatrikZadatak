@@ -31,6 +31,9 @@ import { AdminPocetnaComponent } from './Components/admin/admin-pocetna/admin-po
 import { FormContainerComponent } from './Components/Forms/form-container/form-container.component';
 import { ConfirmComponent } from './Components/Modals/confirm/confirm.component';
 import { IzmjenaBankomataComponent } from './Components/admin/izmjena-bankomata/izmjena-bankomata.component';
+import { PretragaBankomataComponent } from './Components/admin/pretraga-bankomata/pretraga-bankomata.component';
+import { FormSearchbarComponent } from './Components/Forms/form-searchbar/form-searchbar.component';
+import { FormSelectComponent } from './Components/Forms/form-select/form-select.component';
 
 @NgModule({
   declarations: [
@@ -60,7 +63,10 @@ import { IzmjenaBankomataComponent } from './Components/admin/izmjena-bankomata/
     AdminPocetnaComponent,
     FormContainerComponent,
     ConfirmComponent,
-    IzmjenaBankomataComponent
+    IzmjenaBankomataComponent,
+    PretragaBankomataComponent,
+    FormSearchbarComponent,
+    FormSelectComponent
   ],
   imports: [
     BrowserModule,

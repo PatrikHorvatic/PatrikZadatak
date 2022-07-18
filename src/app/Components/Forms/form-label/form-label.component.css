@@ -1,4 +1,12 @@
 :host {
+	display: block;
+	position: relative;
+
+	width: 100%;
+	height: auto;
+
+	text-align: left !important;
+
 	margin-top: 10px;
 	margin-bottom: 10px;
 }
@@ -7,4 +15,5 @@ label {
 	margin-top: 10px;
 	margin-bottom: 10px;
 	font-size: 18px !important;
+	text-align: left !important;
 }

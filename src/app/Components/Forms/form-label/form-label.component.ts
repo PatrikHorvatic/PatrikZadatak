@@ -1,5 +1,10 @@
 import { Component, Input, OnInit } from '@angular/core';
 
+
+/**
+ * Input text
+ */
+
 @Component({
   selector: 'app-form-label',
   templateUrl: './form-label.component.html',

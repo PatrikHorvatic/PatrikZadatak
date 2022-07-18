@@ -112,7 +112,7 @@ export class BankService {
       vrstaBankomata: ATMType.DNEVNO_NOCNI,
       adresa: "",
       napomena: null,
-    },
+    }
   ];
 
   constructor() { }
@@ -120,7 +120,6 @@ export class BankService {
 
   public dohvatiListuBankomata(): Promise<Array<ATM>> {
     return new Promise((resolve, reject) => {
-
 
       setTimeout(() => {
         resolve(this.atmList);
@@ -140,5 +139,13 @@ export class BankService {
   }
 
 
+
+
+  public dohvatiVrsteBankomata(): Promise<Array<any>> {
+    return new Promise((resolve, reject) => {
+
+
+    });
+  }
 
 }
