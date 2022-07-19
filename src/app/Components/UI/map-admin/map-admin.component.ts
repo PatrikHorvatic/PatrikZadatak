@@ -1,4 +1,4 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Loader } from '@googlemaps/js-api-loader';
 import { Environment } from 'src/app/Environment/environment';
 
@@ -8,6 +8,9 @@ import { Environment } from 'src/app/Environment/environment';
   styleUrls: ['./map-admin.component.css']
 })
 export class MapAdminComponent implements OnInit {
+
+  @Input() lat: number;
+  @Input() lng: number;
 
   @Output() mapaKliknuta = new EventEmitter<object>();
   @Output() promjenaMarkera = new EventEmitter<{ lat: number, lng: number }>();
@@ -31,7 +34,7 @@ export class MapAdminComponent implements OnInit {
 
         this.map = new google.maps.Map(document.getElementById('map'),
           {
-            center: { lat: 45.815399, lng: 15.966568 },
+            center: { lat: this.lat ? this.lat : 45.815399, lng: this.lng ? this.lng : 15.966568 },
             zoom: 12,
             disableDefaultUI: true,
             disableDoubleClickZoom: true
@@ -42,7 +45,7 @@ export class MapAdminComponent implements OnInit {
         this.marker = new google.maps.Marker({
           clickable: false,
           map: this.map,
-          position: { lat: 45.815399, lng: 15.966568 }
+          position: { lat: this.lat ? this.lat : 45.815399, lng: this.lng ? this.lng : 15.966568 }
         })
 
         this.pripremiEvente();

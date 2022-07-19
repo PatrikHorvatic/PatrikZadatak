@@ -1,5 +1,9 @@
 <app-content-padding>
 
+  <app-toast *ngIf="showToast" [(show)]="showToast" [message]="toastMessage"></app-toast>
+  <app-confirm *ngIf="showConfirm" [(show)]="showConfirm" message="Zaista želite obrisati bankomat?"
+    (optionClicked)="odaberiRadnju($event)" (showChange)="changeShowConfirm()"></app-confirm>
+
   <app-form-container>
     <app-form-label text="Pretraži prema:"></app-form-label>
     <app-form-select [listaVrijednosti]="searchOptions" [(odabranaVrijednost)]="chosenSearchOption"

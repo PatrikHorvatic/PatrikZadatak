@@ -11,8 +11,17 @@ import { BankService } from 'src/app/Services/bank.service';
 })
 export class PretragaBankomataComponent implements OnInit {
 
-  public searchTerm!: any;
+
   public loadingComplete!: boolean;
+  public showConfirm: boolean = false;
+
+  public showToast: boolean = false;
+  public toastMessage!: string;
+
+  public toDeleteATM: ATM;
+
+
+  public searchTerm!: any;
 
 
   public searchOptions: Array<any> = Object.values(AdminSearchOptions);
@@ -50,8 +59,8 @@ export class PretragaBankomataComponent implements OnInit {
 
     this.bankService.dohvatiListuBankomata()
       .then(atmList => {
-        this.loadingComplete = true;
         this.listATM = atmList;
+        this.loadingComplete = true;
         // this.searchListATM = atmList;
         // console.log(atmList);
 
@@ -118,18 +127,36 @@ export class PretragaBankomataComponent implements OnInit {
   }
 
 
-
-
-
-
-
-
-
-
+  public changeShowConfirm() {
+    this.showConfirm = false;
+  }
 
 
   public potvrdiBrisanjeBankomata(atm: ATM) {
+    this.toDeleteATM = atm;
+    this.showConfirm = true;
+  }
 
+
+  public odaberiRadnju(e: boolean) {
+    if (e) {
+      this.bankService.obrisiBankomat(this.toDeleteATM)
+        .then(_ => {
+          this.toastMessage = "Bankomat uspješno obrisan";
+          this.showToast = true;
+          this.searchListATM = [];
+          this.dohvatiPopisBankomata();
+        })
+        .catch(err => {
+          console.log(err);
+          this.toastMessage = "Dogodila se greška prilikom brisanja bankomata";
+          this.showToast = true;
+
+        })
+        .finally(() => {
+
+        });
+    }
   }
 
 }

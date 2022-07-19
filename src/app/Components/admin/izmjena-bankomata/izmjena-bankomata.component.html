@@ -32,7 +32,8 @@
       [(pulseAnimation)]="pulseVrstaBankomata" (odabranaVrijednostChange)="izmjeniVrstuNapomene($event)">
     </app-form-select>
 
-    <app-map-admin (mapaKliknuta)="azurirajAdresu($event)" (promjenaMarkera)="azurirajLokaciju($event)">
+    <app-map-admin (mapaKliknuta)="azurirajAdresu($event)" (promjenaMarkera)="azurirajLokaciju($event)" [lat]="lat"
+      [lng]="lng">
     </app-map-admin>
 
     <app-form-button text="Izmjeni bankomat" (buttonClicked)="izmjeniBankomat()"></app-form-button>
