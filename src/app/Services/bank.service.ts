@@ -160,7 +160,7 @@ export class BankService {
 
 
 
-  public unesiBankomat(rednibroj: number, odabranaVrstaBankomata: string, adresa: string): Promise<boolean> {
+  public unesiBankomat(rednibroj: number, odabranaVrstaBankomata: string, adresa: string, lat: number, lng: number): Promise<boolean> {
     return new Promise((resolve, reject) => {
 
       if (this.provjeriJedinstvenostRednogBroja(rednibroj)) {
@@ -168,7 +168,7 @@ export class BankService {
           redniBroj: rednibroj,
           vrstaBankomata: odabranaVrstaBankomata,
           adresa: adresa,
-          lokacija: null,
+          lokacija: { lat: lat, lng: lng },
           napomena: null
         });
 
@@ -198,6 +198,17 @@ export class BankService {
 
     });
   }
+
+  public obrisiBankomat(atmDelete: ATM): Promise<boolean> {
+    return new Promise((resolve, reject) => {
+
+      let index = this.atmList.findIndex(atm => atm.redniBroj === atmDelete.redniBroj);
+      this.atmList.splice(index, 1);
+      resolve(true);
+
+    });
+  }
+
 
 
 

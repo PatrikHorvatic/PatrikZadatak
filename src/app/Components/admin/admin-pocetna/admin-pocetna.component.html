@@ -1,5 +1,8 @@
 <app-content-padding>
   <app-spinner *ngIf="!loadingComplete"></app-spinner>
+  <app-toast *ngIf="showToast" [(show)]="showToast" [message]="toastMessage"></app-toast>
+  <app-confirm *ngIf="showConfirm" [(show)]="showConfirm" message="Zaista želite obrisati bankomat?"
+    (optionClicked)="odaberiRadnju($event)" (showChange)="changeShowConfirm()"></app-confirm>
 
   <app-table-container *ngIf="loadingComplete">
 

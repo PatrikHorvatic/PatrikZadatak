@@ -36,6 +36,7 @@ import { FormSelectComponent } from './Components/Forms/form-select/form-select.
 import { FormNumberComponent } from './Components/Forms/form-number/form-number.component';
 import { MapComponent } from './Components/UI/map/map.component';
 import { ATMDetailsComponent } from './Components/UI/atmdetails/atmdetails.component';
+import { MapAdminComponent } from './Components/UI/map-admin/map-admin.component';
 
 @NgModule({
   declarations: [
@@ -64,7 +65,11 @@ import { ATMDetailsComponent } from './Components/UI/atmdetails/atmdetails.compo
     ConfirmComponent,
     IzmjenaBankomataComponent,
     PretragaBankomataComponent,
-    FormNumberComponent, MapComponent, ATMDetailsComponent,
+    FormNumberComponent,
+
+    MapComponent, MapAdminComponent,
+
+    ATMDetailsComponent,
   ],
   imports: [
     BrowserModule,

@@ -17,6 +17,17 @@
     <app-form-text [(text)]="adresaBankomata" placeholder="Adresa bankomata" [(pulseAnimation)]="pulseAdresaBankomata">
     </app-form-text>
 
+    <app-form-label text="Zemljopisna širina (lat)"></app-form-label>
+    <app-form-number [(number)]="lat" placeholder="Zemljopisna širina">
+    </app-form-number>
+    <app-form-label text="Zemljopisna dužina (lng)"></app-form-label>
+    <app-form-number [(number)]="lng" placeholder="Zemljopisna dužina">
+    </app-form-number>
+
+
+    <app-map-admin (mapaKliknuta)="azurirajAdresu($event)" (promjenaMarkera)="azurirajLokaciju($event)">
+    </app-map-admin>
+
     <app-form-button text="Unesi bankomat" (buttonClicked)="unesiBankomat()"></app-form-button>
 
   </app-form-container>

@@ -23,6 +23,10 @@ export class UnosBankomataComponent implements OnInit {
   public redniBroj!: number | null;
   public odabranaVrstaBankomata!: any;
   public adresaBankomata: string | null = "";
+  public lat: number;
+  public lng: number;
+
+
 
   constructor(private bank: BankService) { }
 
@@ -34,7 +38,7 @@ export class UnosBankomataComponent implements OnInit {
   }
 
   private dohvatiPodatkeOBankomatu() {
-    
+
   }
 
 
@@ -45,6 +49,17 @@ export class UnosBankomataComponent implements OnInit {
 
   izmjeniVrstuBankomata(e: any) {
     this.odabranaVrstaBankomata = e;
+  }
+
+
+  public azurirajLokaciju(e: { lat: number, lng: number }) {
+    this.lat = e.lat;
+    this.lng = e.lng;
+  }
+
+  public azurirajAdresu(e: any) {
+    console.log(e);
+    this.adresaBankomata = e["formatted_address"];
   }
 
 
@@ -79,7 +94,7 @@ export class UnosBankomataComponent implements OnInit {
 
     this.showLoading = true;
 
-    this.bank.unesiBankomat(this.redniBroj, this.odabranaVrstaBankomata, this.adresaBankomata)
+    this.bank.unesiBankomat(this.redniBroj, this.odabranaVrstaBankomata, this.adresaBankomata, this.lat, this.lng)
       .then(uspjesnost => {
         this.toastMessage = "Bankomat uspješno dodan!";
         this.showToast = true;
@@ -87,6 +102,8 @@ export class UnosBankomataComponent implements OnInit {
         this.redniBroj = null;
         this.odabranaVrstaBankomata = null;
         this.adresaBankomata = null;
+        this.lat = null;
+        this.lng = null;
 
       })
       .catch(error => {

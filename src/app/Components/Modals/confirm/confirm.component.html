@@ -1,3 +1,9 @@
- <div class="confirm-container">
+ <div class="modal-confirm-container">
+   <div class="modal-window">
+     <h3>{{message}}</h3>
 
+     <app-form-button text="Obriši" (buttonClicked)="emitirajTrue()"></app-form-button>
+     <br>
+     <app-form-button text="Odustani" (buttonClicked)="emitirajFalse()"></app-form-button>
+   </div>
  </div>

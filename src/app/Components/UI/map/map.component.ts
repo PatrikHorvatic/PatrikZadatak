@@ -20,7 +20,7 @@ export class MapComponent implements OnInit {
   ngOnInit(): void {
     let loader = new Loader({
       apiKey: Environment.MAPS_API_KEY,
-      libraries: ['places']
+      libraries: ['places', 'geometry']
     });
 
     loader.load()
@@ -82,6 +82,7 @@ export class MapComponent implements OnInit {
 
     //ON CLICK
     google.maps.event.addListener(this.map, 'click', function (event: any) {
+
       console.log(event);
       console.log(event.latLng);
       console.log(event.latLng.lat());

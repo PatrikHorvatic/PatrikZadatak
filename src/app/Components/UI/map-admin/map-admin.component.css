@@ -4,10 +4,15 @@
 	padding: 0;
 	position: relative;
 	width: 100%;
-	height: calc(100vh - 50px);
+	height: 200px;
+
+	margin-bottom: 20px;
+
+	border-radius: 16px;
 }
 
 .velicinaMape {
 	width: 100%;
-	height: calc(100vh - 50px);
+	height: 200px;
+	border-radius: 16px;
 }

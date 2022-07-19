@@ -16,6 +16,8 @@ export class FormNumberComponent implements OnInit, OnChanges {
   @Input() number!: number;
   @Output() numberChange = new EventEmitter<number>();
 
+  @Input() readonly: boolean = false;
+
   // 2-WAY BINDING
   @Input() pulseAnimation: boolean = false;
   @Output() pulseAnimationChange = new EventEmitter<boolean>();
