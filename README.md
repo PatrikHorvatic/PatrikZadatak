@@ -1,2 +1,2 @@
-# PatrikZadatak
+# Patrik Horvatić - IGEA Zadatak
 
