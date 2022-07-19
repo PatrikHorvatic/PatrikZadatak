@@ -16,7 +16,7 @@ export class AdminNavigationComponent implements OnInit {
   }
 
 
-
+  /**Poziva se klikom na gumb odjave */
   userLogout() {
     this.authService.odjaviKorisnika()
       .then(resp => {

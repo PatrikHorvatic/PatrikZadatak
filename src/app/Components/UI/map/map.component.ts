@@ -3,6 +3,7 @@ import { Loader } from '@googlemaps/js-api-loader';
 import { Environment } from 'src/app/Environment/environment';
 import { ATM } from 'src/app/Interfaces/atm';
 
+/**Komponenta sadrži mapu bankomata. Koristi ju običan korisnik i administrator prilikom PREGLEDA bankomata*/
 @Component({
   selector: 'app-map',
   templateUrl: './map.component.html',
@@ -10,14 +11,19 @@ import { ATM } from 'src/app/Interfaces/atm';
 })
 export class MapComponent implements OnInit {
 
+  /**Lista bankomata koja se prikazuje na mapi. */
   @Input() listaBankomata!: Array<ATM>;
+
+  /**Event koji se emitira kada je jedan od markera/bankomata kliknut */
   @Output() markerKliknut = new EventEmitter<number>();
 
+  /**Mapa */
   private map: google.maps.Map;
 
   constructor() { }
 
   ngOnInit(): void {
+
     let loader = new Loader({
       apiKey: Environment.MAPS_API_KEY,
       libraries: ['places', 'geometry']
@@ -34,8 +40,6 @@ export class MapComponent implements OnInit {
 
         this.pripremiListuMarkeraBankomata();
 
-        this.pripremiEvente();
-
       })
       .catch(error => {
         console.log(error);
@@ -50,6 +54,7 @@ export class MapComponent implements OnInit {
 
   private pripremiListuMarkeraBankomata() {
 
+    
     if (!this.listaBankomata) {
       return;
     }
@@ -76,19 +81,5 @@ export class MapComponent implements OnInit {
   }
 
 
-
-
-  private pripremiEvente() {
-
-    //ON CLICK
-    google.maps.event.addListener(this.map, 'click', function (event: any) {
-
-      console.log(event);
-      console.log(event.latLng);
-      console.log(event.latLng.lat());
-      console.log(event.latLng.lng());
-    });
-
-  }
 
 }

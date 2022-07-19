@@ -1,6 +1,7 @@
 import { Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges } from '@angular/core';
 import { Environment } from 'src/app/Environment/environment';
 
+/**Komponenta za unos lozinke */
 @Component({
   selector: 'app-form-password',
   templateUrl: './form-password.component.html',

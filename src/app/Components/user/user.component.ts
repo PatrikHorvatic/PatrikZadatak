@@ -12,6 +12,7 @@ export class UserComponent implements OnInit {
   public pokaziDetaljeBankomata: boolean = false;
   public atmDetails!: ATM;
 
+  /**Zastavica služi za prikaz loading spinnera na stranici kada*/
   public loadingComplete!: boolean;
 
   public listATM!: Array<ATM>;

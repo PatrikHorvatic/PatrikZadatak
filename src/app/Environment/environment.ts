@@ -9,7 +9,9 @@ export const Environment = {
 		shake: 500
 	},
 
+	/**Postavke za Toast UI komponentu */
 	toast: {
+		/**Trajanje toasta */
 		duration: 2980
 	},
 
@@ -19,5 +21,6 @@ export const Environment = {
 		max: 2000
 	},
 
+	/**API ključ za GoogleMaps */
 	MAPS_API_KEY: 'AIzaSyDQ7bu4dRZHflYtHmc9oSBEAbxZ_zUmKNU'
 }

@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 
+/**Komponenta za naziv/naslov forme */
 @Component({
   selector: 'app-form-title',
   templateUrl: './form-title.component.html',

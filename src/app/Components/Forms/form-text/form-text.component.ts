@@ -1,6 +1,7 @@
 import { Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges } from '@angular/core';
 import { Environment } from 'src/app/Environment/environment';
 
+/**Komponenta za unos teksta */
 @Component({
   selector: 'app-form-text',
   templateUrl: './form-text.component.html',

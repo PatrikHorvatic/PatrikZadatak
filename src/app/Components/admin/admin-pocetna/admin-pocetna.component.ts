@@ -11,15 +11,22 @@ import { BankService } from 'src/app/Services/bank.service';
 })
 export class AdminPocetnaComponent implements OnInit {
 
-
+  /**Zastavica služi za prikaz loading spinnera na stranici*/
   public loadingComplete!: boolean;
+
+  /**Zastavica služi za prikaz modalnog prozora potvrde radnje */
   public showConfirm: boolean = false;
 
+  /**Zastavica služi za prikaz toast komponente */
   public showToast: boolean = false;
+
+  /**Poruka u Toast komponenti */
   public toastMessage!: string;
 
+  /**Bankomat koji je odabran za moguće brisanje */
   public toDeleteATM: ATM;
 
+  /**Popis bankomata */
   public listATM!: Array<ATM>;
 
   constructor(private bankService: BankService,
@@ -38,6 +45,8 @@ export class AdminPocetnaComponent implements OnInit {
   public changeShowConfirm() {
     this.showConfirm = false;
   }
+
+
 
   public dohvatiPopisBankomata(): void {
 
@@ -62,11 +71,14 @@ export class AdminPocetnaComponent implements OnInit {
   }
 
 
+  /**Otvara modalni prozor za potvrdu radnje brisanja. Sprema bankomat koji bi se mogao obrisati */
   public potvrdiBrisanjeBankomata(atm: ATM) {
     this.toDeleteATM = atm;
     this.showConfirm = true;
   }
 
+
+  /**Poziva se kada je modalni prozor potvrde (AppConfirm) emitirao vrijednost klikom gumba */
   public odaberiRadnju(e: boolean) {
     if (e) {
       this.bankService.obrisiBankomat(this.toDeleteATM)

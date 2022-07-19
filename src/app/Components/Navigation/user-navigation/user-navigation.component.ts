@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { AuthService } from 'src/app/Services/auth.service';
 
+/**Komponenta predstavlja navigaciju običnog korisnika. */
 @Component({
   selector: 'app-user-navigation',
   templateUrl: './user-navigation.component.html',

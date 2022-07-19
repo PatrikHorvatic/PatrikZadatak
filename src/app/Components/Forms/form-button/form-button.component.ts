@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
+/**Komponenta predstavlja gumb */
 @Component({
   selector: 'app-form-button',
   templateUrl: './form-button.component.html',
@@ -7,13 +8,13 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 })
 export class FormButtonComponent implements OnInit {
 
+  /**Text u gumbu */
   @Input() text: string = "";
 
   /**Emitira se na button click. Emitira void, stoga $event nije potreban */
   @Output() buttonClicked = new EventEmitter<void>();
 
   constructor() { }
-
 
   ngOnInit(): void {
   }

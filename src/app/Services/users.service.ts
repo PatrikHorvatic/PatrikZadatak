@@ -7,6 +7,7 @@ import { UserType } from '../Enums/user-type';
 })
 export class UsersService {
 
+  /**Lista korisnika aplikacije */
   public readonly userList: Array<User> = [
     {
       korisnickoIme: "korisnik1",
@@ -33,6 +34,7 @@ export class UsersService {
   constructor() { }
 
 
+  /**Metoda vraća listu korisnika */
   public vratiListuKorisnika(): Array<User> {
     return this.userList;
   }

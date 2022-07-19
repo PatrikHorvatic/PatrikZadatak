@@ -1,6 +1,7 @@
 import { Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges } from '@angular/core';
 import { Environment } from 'src/app/Environment/environment';
 
+/**Input tipa number*/
 @Component({
   selector: 'app-form-number',
   templateUrl: './form-number.component.html',
@@ -8,7 +9,7 @@ import { Environment } from 'src/app/Environment/environment';
 })
 export class FormNumberComponent implements OnInit, OnChanges {
 
-  // PLACEHOLDER ZA INPUT
+  /**PLACEHOLDER ZA INPUT */
   @Input() placeholder: string = "";
 
 

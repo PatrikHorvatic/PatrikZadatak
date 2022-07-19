@@ -10,10 +10,16 @@ import { AuthService } from 'src/app/Services/auth.service';
 })
 export class LoginComponent implements OnInit {
 
+  /**Zastavica za prikal loading modala */
   public showLoadingModal: boolean = false;
+
+
+  /**Zastavica služi za prikaz toast komponente */
   public showToast: boolean = false;
 
+  /**Zastavica animiranja input komponente*/
   public pulseUsername: boolean = false;
+  /**Zastavica animiranja input komponente*/
   public pulsePassword: boolean = false;
   public shakeForm: boolean = false;
 
@@ -21,6 +27,8 @@ export class LoginComponent implements OnInit {
   public korisnickoIme!: string;
   public lozinka!: string;
 
+
+  /**Poruka u Toast komponenti */
   public toastMessage: string = "Netočni podaci.";
 
 

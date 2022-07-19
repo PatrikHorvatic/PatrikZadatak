@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 
 
-/**
+/**Labela
  * Input text
  */
 
@@ -12,6 +12,7 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class FormLabelComponent implements OnInit {
 
+  /**Text labele */
   @Input() text: string = "";
 
   constructor() { }

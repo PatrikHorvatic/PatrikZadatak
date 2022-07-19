@@ -1,3 +1,5 @@
+
+/**Enumeracija sadrži nazive vrsta bankomata.*/
 export enum ATMType {
 	BESKONTAKTNI = "Beskontaktni",
 	UPLATNO_ISPLATNI = "Uplatno-isplatni",
@@ -7,6 +9,7 @@ export enum ATMType {
 }
 
 
+/**Enumeracija sadrži stanja u kojem bankomat može biti.*/
 export enum ATMState {
 	U_FUNKCIJI = "U funkciji",
 	IZVAN_FUNKCIJE = "Izvan funkcije"

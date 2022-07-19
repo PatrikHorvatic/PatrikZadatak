@@ -8,6 +8,7 @@ import { ATM } from '../Interfaces/atm';
 })
 export class BankService {
 
+  /**Lista bankomata */
   public atmList: Array<ATM> = [
     {
       redniBroj: 1,
@@ -29,6 +30,7 @@ export class BankService {
   constructor() { }
 
 
+  /**Metoda 'asinkrono' vraća listu bankomata iz liste bankomata. Dodana metoda setTimeout radi simuliranja API poziva. */
   public dohvatiListuBankomata(): Promise<Array<ATM>> {
     return new Promise((resolve, reject) => {
 
@@ -40,6 +42,10 @@ export class BankService {
   }
 
 
+  /**Metoda služi za dohvaćanje podataka o bankomatu prema njegovom rednom broju.
+   * 
+   * @param redniBroj - redni broj bankomata
+   */
   public dohvatiPodatkeOBankomatu(redniBroj: number): Promise<ATM> {
     return new Promise((resolve, reject) => {
 
@@ -55,7 +61,14 @@ export class BankService {
   }
 
 
-
+  /**Metoda služi za unos bankomata. Prvojera podataka vrši ne prije slanja iz stranice.
+   * 
+   * @param rednibroj - redniBroj bankomata
+   * @param odabranaVrstaBankomata - odabrana vrsta bankomata, jedna od vrijedosti iz enumeracije {@link ATMType}
+   * @param adresa - adresa bankomata, dobivena iz karte ili ručnim unosom administratora
+   * @param lat - zemljopisna širina bankomata na karti
+   * @param lng - zemljopisna dužina bankomata na karti
+   */
   public unesiBankomat(rednibroj: number, odabranaVrstaBankomata: string, adresa: string, lat: number, lng: number): Promise<boolean> {
     return new Promise((resolve, reject) => {
 
@@ -80,6 +93,15 @@ export class BankService {
     });
   }
 
+  /**Metoda služi za izmjenu bankomata. Prvojera podataka i postojanost bankomata vrši ne prije slanja iz stranice.
+    * 
+    * @param rednibroj - redniBroj bankomata
+    * @param odabranaVrstaBankomata - odabrana vrsta bankomata, jedna od vrijedosti iz enumeracije {@link ATMType}
+    * @param adresa - adresa bankomata, dobivena iz karte ili ručnim unosom administratora
+    * @param napomena - napomena u vezi bankomata, jedna od vrijednosti iz enumeracije {@link ATMState}
+   * @param lat - zemljopisna širina bankomata na karti
+   * @param lng - zemljopisna dužina bankomata na karti
+  */
   public izmjeniBankomat(rednibroj: number, odabranaVrstaBankomata: string, adresa: string, napomena: string | null, lat: number, lng: number): Promise<boolean> {
     return new Promise((resolve, reject) => {
 
@@ -97,6 +119,8 @@ export class BankService {
     });
   }
 
+
+  /**Metoda briše bankomat iz liste bankomata */
   public obrisiBankomat(atmDelete: ATM): Promise<boolean> {
     return new Promise((resolve, reject) => {
 
@@ -109,7 +133,9 @@ export class BankService {
 
 
 
-
+  /**Metoda se poziva prije unosa novog ili izmjene postojećeg bankomata. Pošto redni broj mora biti jedinstven,
+   * prije tih operacija potrebno je izvršiti ovu metodu.
+   */
   public provjeriJedinstvenostRednogBroja(redniBroj: number): boolean {
     // console.log(Boolean(this.atmList.filter(atm => atm.redniBroj === redniBroj).length));
 
@@ -129,9 +155,7 @@ export class BankService {
    */
   public provjeriPostojanostRednogBroja(redniBroj: string): Promise<boolean> {
     return new Promise((resolve, reject) => {
-
       console.log(this.atmList.filter(atm => String(atm.redniBroj) === redniBroj).length === 0);
-
 
       if (this.atmList.filter(atm => String(atm.redniBroj) === redniBroj).length === 0) {
         reject(false);

@@ -13,7 +13,6 @@ export class AuthService {
   constructor(private users: UsersService) { }
 
   /**Metoda služi za provjeru unesenih korisničkih podataka prilikom prijave.
-   * 
   */
   public provjeriLoginPodatke(korisnickoIme: string, lozinka: string): Promise<User> {
     return new Promise((resolve, reject) => {
@@ -66,7 +65,6 @@ export class AuthService {
 
 
   public provjeriAkoJeKorisnikPrijavljen(type: number): Promise<boolean> {
-
     console.log("ZOVEM provjeriAkoJeKorisnikPrijavljen u AuthService");
 
     return new Promise((resolve, reject) => {

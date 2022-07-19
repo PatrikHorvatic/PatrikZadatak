@@ -1,6 +1,8 @@
-import { Component, ElementRef, EventEmitter, Input, OnChanges, OnInit, Output, Renderer2, SimpleChange, SimpleChanges } from '@angular/core';
+import { Component, ElementRef, EventEmitter, Input, OnChanges, OnInit, Output, Renderer2, SimpleChanges } from '@angular/core';
 import { ATM } from 'src/app/Interfaces/atm';
 
+
+/**Komponenta služi za prikaz detalja o bankomatu. Ulazi s desne strane prozora.*/
 @Component({
   selector: 'app-atmdetails',
   templateUrl: './atmdetails.component.html',
@@ -9,10 +11,11 @@ import { ATM } from 'src/app/Interfaces/atm';
 export class ATMDetailsComponent implements OnInit, OnChanges {
 
 
+  /**Zastavica za prikaz */
   @Input("menuActive") menuActive: boolean;
   @Output() menuActiveChange: EventEmitter<boolean> = new EventEmitter<boolean>();
 
-
+  /**Ulazni podaci o odabranom bankomatu */
   @Input() atmDetails!: ATM;
 
   constructor(private renderer: Renderer2, private nativeElement: ElementRef) { }

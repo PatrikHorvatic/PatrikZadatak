@@ -1,6 +1,7 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { OutletContext } from '@angular/router';
 
+/**Komponenta za pretragu */
 @Component({
   selector: 'app-form-searchbar',
   templateUrl: './form-searchbar.component.html',

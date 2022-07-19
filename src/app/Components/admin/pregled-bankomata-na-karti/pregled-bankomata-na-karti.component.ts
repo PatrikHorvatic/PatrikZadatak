@@ -9,12 +9,16 @@ import { BankService } from 'src/app/Services/bank.service';
 })
 export class PregledBankomataNaKartiComponent implements OnInit {
 
-
   public pokaziDetaljeBankomata: boolean = false;
+
+  /**Podaci bankomata dobiveni klikom na marker u mapi.*/
   public atmDetails!: ATM;
 
+
+  /**Zastavica služi za prikaz loading spinnera na stranici kada*/
   public loadingComplete!: boolean;
 
+  /**Popis bankomata */
   public listATM!: Array<ATM>;
 
   constructor(private bankService: BankService) { }
@@ -25,9 +29,10 @@ export class PregledBankomataNaKartiComponent implements OnInit {
     this.listATM = [];
 
     this.dohvatiPopisBankomata();
+  }
 
 
-  } public dohvatiPopisBankomata(): void {
+  public dohvatiPopisBankomata(): void {
 
     this.bankService.dohvatiListuBankomata()
       .then(atmList => {
@@ -39,13 +44,13 @@ export class PregledBankomataNaKartiComponent implements OnInit {
       .catch(error => {
         this.loadingComplete = true;
         console.log(error);
-      })
-      .finally(() => {
-
       });
 
   }
 
+  /**Metoda se poziva kada administrator klikne na jedan od markera bankomata.
+   * Prosljeđuje se index iz liste, spremaju se podati i otvara komponenta s podatima bankomata.
+   */
   public prikaziProzorSDetaljimaBankomata(e: number) {
 
     this.atmDetails = this.listATM[e];

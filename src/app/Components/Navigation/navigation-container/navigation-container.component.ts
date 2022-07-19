@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 
+/**Komponenta je kontejner navigacije aplikacije*/
 @Component({
   selector: 'app-navigation-container',
   templateUrl: './navigation-container.component.html',

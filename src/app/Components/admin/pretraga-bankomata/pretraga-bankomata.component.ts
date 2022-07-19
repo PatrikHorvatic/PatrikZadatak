@@ -11,11 +11,18 @@ import { BankService } from 'src/app/Services/bank.service';
 })
 export class PretragaBankomataComponent implements OnInit {
 
-
+  /**Zastavica služi za prikaz loading spinnera na stranici kada*/
   public loadingComplete!: boolean;
+
+
+  /**Zastavica služi za prikaz modalnog prozora potvrde radnje */
   public showConfirm: boolean = false;
 
+
+  /**Zastavica služi za prikaz toast komponente */
   public showToast: boolean = false;
+
+  /**Poruka u Toast komponenti */
   public toastMessage!: string;
 
   public toDeleteATM: ATM;

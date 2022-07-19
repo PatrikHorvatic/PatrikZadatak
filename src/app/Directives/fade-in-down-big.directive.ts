@@ -1,8 +1,14 @@
 import { Directive, ElementRef, Input, Renderer2 } from '@angular/core';
 
+
+/** Direktiva služi za dodavanja FadeInDownBig animacije. 
+ * 
+ * Dokumentacija se nalazi na ovoj poveznici: https://animate.style/
+ * 
+ * Trajanje animacije mijenja se u styles.css
+*/
 @Directive({
-  selector: '[appFadeInDownBig]',
-  inputs: []
+  selector: '[appFadeInDownBig]'
 })
 export class FadeInDownBigDirective {
 

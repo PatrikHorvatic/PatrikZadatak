@@ -1,6 +1,7 @@
 import { Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges } from '@angular/core';
 import { Environment } from 'src/app/Environment/environment';
 
+/**Komponena za odabir vrijednosti */
 @Component({
   selector: 'app-form-select',
   templateUrl: './form-select.component.html',

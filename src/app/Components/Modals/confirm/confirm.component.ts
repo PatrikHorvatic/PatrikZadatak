@@ -1,5 +1,7 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
+
+/**Komponenta predstavlja modalni prozor kojim se potvrđuje određena radnja */
 @Component({
   selector: 'app-confirm',
   templateUrl: './confirm.component.html',
@@ -30,7 +32,7 @@ export class ConfirmComponent implements OnInit {
     this.showChange.emit(false);
     this.show = false;
   }
-  
+
   emitirajFalse() {
     this.optionClicked.emit(false);
     this.showChange.emit(false);

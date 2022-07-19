@@ -9,17 +9,33 @@ import { BankService } from 'src/app/Services/bank.service';
 })
 export class UnosBankomataComponent implements OnInit {
 
+
+  /**Zastavica služi za prikaz loading spinnera u sučelju */
   public showLoading: boolean = false;
+
+  /**Zastavica služi za prikaz toast komponente */
   public showToast: boolean = false;
+
+  /**Poruka u Toast komponenti */
   public toastMessage!: string;
 
+
+
+  /**Zastavica animiranja input komponente*/
   public pulseRedniBroj: boolean = false;
+
+  /**Zastavica animiranja input komponente*/
   public pulseVrstaBankomata: boolean = false;
+
+  /**Zastavica animiranja input komponente*/
   public pulseAdresaBankomata: boolean = false;
 
-
+  /**Lista sadrži vrste bankomata dobivenih iz enumeracije {@link ATMType} */
   public vrsteBankomata!: Array<string>;
 
+
+
+  //PODACI FORME
   public redniBroj!: number | null;
   public odabranaVrstaBankomata!: any;
   public adresaBankomata: string | null = "";
@@ -33,30 +49,28 @@ export class UnosBankomataComponent implements OnInit {
   ngOnInit(): void {
     this.vrsteBankomata = Object.values(ATMType);
     this.showLoading = false;
-
-    this.dohvatiPodatkeOBankomatu()
-  }
-
-  private dohvatiPodatkeOBankomatu() {
-
   }
 
 
-
+  /**Metoda za debug */
   public pogledajOdabranuVrstu(e: any) {
     console.log(e);
   }
 
+
+  /**Poziva se kod promjene odabrane vrijednosti u app-form-select komponenti*/
   izmjeniVrstuBankomata(e: any) {
     this.odabranaVrstaBankomata = e;
   }
 
 
+  /**Poziva se klikom na kartu u sučelju*/
   public azurirajLokaciju(e: { lat: number, lng: number }) {
     this.lat = e.lat;
     this.lng = e.lng;
   }
 
+  /**Poziva se klikom na kartu u sučelju*/
   public azurirajAdresu(e: any) {
     console.log(e);
     this.adresaBankomata = e["formatted_address"];
@@ -87,10 +101,6 @@ export class UnosBankomataComponent implements OnInit {
       return;
     }
 
-
-    console.log(this.redniBroj);
-    console.log(this.odabranaVrstaBankomata);
-    console.log(this.adresaBankomata);
 
     this.showLoading = true;
 

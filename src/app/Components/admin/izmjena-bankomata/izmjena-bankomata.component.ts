@@ -11,18 +11,33 @@ import { BankService } from 'src/app/Services/bank.service';
 })
 export class IzmjenaBankomataComponent implements OnInit {
 
-
+  /**Zastavica služi za prikaz loading spinnera u sučelju */
   public showLoading: boolean = false;
+
+  /**Zastavica služi za prikaz toast komponente */
   public showToast: boolean = false;
+
+
+  /**Poruka u Toast komponenti */
   public toastMessage!: string;
 
+  /**Zastavica animiranja input komponente*/
   public pulseRedniBroj: boolean = false;
+
+  /**Zastavica animiranja input komponente*/
   public pulseVrstaBankomata: boolean = false;
+
+  /**Zastavica animiranja input komponente*/
   public pulseAdresaBankomata: boolean = false;
 
+  /**Lista sadrži vrste bankomata dobivenih iz enumeracije {@link ATMType} */
   public vrsteBankomata!: Array<string>;
+
+  /**Lista sadrži vrste napomena dobivenih iz enumeracije {@link ATMState} */
   public vrsteNapomena!: Array<string>;
 
+
+  // Podaci forme za izmjenu
   public redniBroj!: number;
   public redniBrojStari!: number;
   public odabranaVrstaBankomata!: any;
@@ -39,11 +54,14 @@ export class IzmjenaBankomataComponent implements OnInit {
 
 
   ngOnInit(): void {
+
     this.vrsteBankomata = Object.values(ATMType);
     this.vrsteNapomena = Object.values(ATMState);
 
     console.log(this.activeRoute);
 
+
+    /**Potrebno je provjeriti da je redniBroj bankomata uistinu cijeli broj. Ako nije, vrati se na početnu stranicu administratora */
     if (CanStringBeWholePositiveNumber(this.activeRoute.snapshot.params['redniBroj'])) {
       this.redniBroj = Number(this.activeRoute.snapshot.params['redniBroj']);
       this.dohvatiPodatkeOBankomatu();
@@ -53,6 +71,7 @@ export class IzmjenaBankomataComponent implements OnInit {
     }
   }
 
+  /**Dohvaća podatke o bankomatu prema njegovom rednom broju*/
   private dohvatiPodatkeOBankomatu() {
 
     this.bankService.dohvatiPodatkeOBankomatu(this.redniBroj)
@@ -77,30 +96,30 @@ export class IzmjenaBankomataComponent implements OnInit {
 
   }
 
+  /**Poziva se promjenom vrijednosti u app-select komponenti  */
   izmjeniVrstuBankomata(e: any) {
     this.odabranaVrstaBankomata = e;
   }
 
+  /**Poziva se promjenom vrijednosti u app-select komponenti  */
   izmjeniVrstuNapomene(e: any) {
     this.napomena = e;
   }
 
-
-
-
-
+  /**Poziva se klikom na kartu u sučelju*/
   azurirajAdresu(e: any) {
-
     console.log(e);
     this.adresaBankomata = e["formatted_address"];
   }
 
+  /**Poziva se klikom na kartu u sučelju*/
   azurirajLokaciju(e: { lat: number, lng: number }) {
     this.lat = e.lat;
     this.lng = e.lng;
   }
 
 
+  /**Poziva se klikom gumba. */
   izmjeniBankomat() {
     if (!this.redniBroj) {
       this.pulseRedniBroj = true;

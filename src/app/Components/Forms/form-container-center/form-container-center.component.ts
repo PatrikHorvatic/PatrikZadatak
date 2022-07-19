@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
+/**Komponenta predstavlja fromu na sredini stranice */
 @Component({
   selector: 'app-form-container-center',
   templateUrl: './form-container-center.component.html',

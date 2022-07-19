@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
+/**Komponenta predstavlja kontejner forme */
 @Component({
   selector: 'app-form-container',
   templateUrl: './form-container.component.html',

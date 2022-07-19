@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
+/**Komponenta predstavlja spinner */
 @Component({
   selector: 'app-spinner',
   templateUrl: './spinner.component.html',
