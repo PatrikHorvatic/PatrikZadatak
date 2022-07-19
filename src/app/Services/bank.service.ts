@@ -184,7 +184,7 @@ export class BankService {
     });
   }
 
-  public izmjeniBankomat(rednibroj: number, odabranaVrstaBankomata: string, adresa: string, napomena: string | null): Promise<boolean> {
+  public izmjeniBankomat(rednibroj: number, odabranaVrstaBankomata: string, adresa: string, napomena: string | null, lat: number, lng: number): Promise<boolean> {
     return new Promise((resolve, reject) => {
 
       let index = this.atmList.findIndex(atm => atm.redniBroj === rednibroj);
@@ -193,6 +193,8 @@ export class BankService {
       this.atmList[index].redniBroj = rednibroj;
       this.atmList[index].vrstaBankomata = odabranaVrstaBankomata;
       this.atmList[index].napomena = napomena;
+      this.atmList[index].lokacija.lat = lat;
+      this.atmList[index].lokacija.lng = lng;
 
       resolve(true);
 

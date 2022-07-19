@@ -37,6 +37,7 @@ import { FormNumberComponent } from './Components/Forms/form-number/form-number.
 import { MapComponent } from './Components/UI/map/map.component';
 import { ATMDetailsComponent } from './Components/UI/atmdetails/atmdetails.component';
 import { MapAdminComponent } from './Components/UI/map-admin/map-admin.component';
+import { PregledBankomataNaKartiComponent } from './Components/admin/pregled-bankomata-na-karti/pregled-bankomata-na-karti.component';
 
 @NgModule({
   declarations: [
@@ -70,6 +71,7 @@ import { MapAdminComponent } from './Components/UI/map-admin/map-admin.component
     MapComponent, MapAdminComponent,
 
     ATMDetailsComponent,
+     PregledBankomataNaKartiComponent,
   ],
   imports: [
     BrowserModule,

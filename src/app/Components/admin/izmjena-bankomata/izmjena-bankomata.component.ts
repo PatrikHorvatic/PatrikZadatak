@@ -28,6 +28,8 @@ export class IzmjenaBankomataComponent implements OnInit {
   public odabranaVrstaBankomata!: any;
   public adresaBankomata: string | null = "";
   public napomena: string | null = "";
+  public lat: number;
+  public lng: number;
 
   constructor(private route: Router,
     private bankService: BankService,
@@ -61,6 +63,8 @@ export class IzmjenaBankomataComponent implements OnInit {
         this.adresaBankomata = atm_data.adresa;
         this.napomena = atm_data.napomena;
         this.odabranaVrstaBankomata = atm_data.vrstaBankomata;
+        this.lat = atm_data.lokacija.lat;
+        this.lng = atm_data.lokacija.lng;
 
       })
       .catch(error => {
@@ -79,6 +83,21 @@ export class IzmjenaBankomataComponent implements OnInit {
 
   izmjeniVrstuNapomene(e: any) {
     this.napomena = e;
+  }
+
+
+
+
+
+  azurirajAdresu(e: any) {
+
+    console.log(e);
+    this.adresaBankomata = e["formatted_address"];
+  }
+
+  azurirajLokaciju(e: { lat: number, lng: number }) {
+    this.lat = e.lat;
+    this.lng = e.lng;
   }
 
 
@@ -123,7 +142,7 @@ export class IzmjenaBankomataComponent implements OnInit {
 
       else {
         this.showLoading = true;
-        this.bankService.izmjeniBankomat(this.redniBroj, this.odabranaVrstaBankomata, this.adresaBankomata, this.napomena)
+        this.bankService.izmjeniBankomat(this.redniBroj, this.odabranaVrstaBankomata, this.adresaBankomata, this.napomena, this.lat, this.lng)
           .then(resp => {
             this.toastMessage = "Podaci bankomata uspješno izmjenjeni";
             this.showToast = true;
@@ -141,7 +160,7 @@ export class IzmjenaBankomataComponent implements OnInit {
     else {
 
       this.showLoading = true;
-      this.bankService.izmjeniBankomat(this.redniBroj, this.odabranaVrstaBankomata, this.adresaBankomata, this.napomena)
+      this.bankService.izmjeniBankomat(this.redniBroj, this.odabranaVrstaBankomata, this.adresaBankomata, this.napomena, this.lat, this.lng)
         .then(resp => {
           this.toastMessage = "Podaci bankomata uspješno izmjenjeni";
           this.showToast = true;

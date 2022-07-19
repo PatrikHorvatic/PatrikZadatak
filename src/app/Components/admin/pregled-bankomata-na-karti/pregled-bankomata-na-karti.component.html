@@ -1,0 +1,7 @@
+
+<app-spinner *ngIf="!loadingComplete"></app-spinner>
+
+<app-map *ngIf="loadingComplete" [listaBankomata]="listATM" (markerKliknut)="prikaziProzorSDetaljimaBankomata($event)">
+</app-map>
+
+<app-atmdetails [(menuActive)]="pokaziDetaljeBankomata" [atmDetails]="atmDetails"></app-atmdetails>
