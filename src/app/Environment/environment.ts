@@ -17,5 +17,7 @@ export const Environment = {
 	delays: {
 		min: 500,
 		max: 2000
-	}
+	},
+
+	MAPS_API_KEY: 'AIzaSyDQ7bu4dRZHflYtHmc9oSBEAbxZ_zUmKNU'
 }

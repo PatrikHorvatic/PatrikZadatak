@@ -34,6 +34,8 @@ import { PretragaBankomataComponent } from './Components/admin/pretraga-bankomat
 import { FormSearchbarComponent } from './Components/Forms/form-searchbar/form-searchbar.component';
 import { FormSelectComponent } from './Components/Forms/form-select/form-select.component';
 import { FormNumberComponent } from './Components/Forms/form-number/form-number.component';
+import { MapComponent } from './Components/UI/map/map.component';
+import { ATMDetailsComponent } from './Components/UI/atmdetails/atmdetails.component';
 
 @NgModule({
   declarations: [
@@ -41,7 +43,7 @@ import { FormNumberComponent } from './Components/Forms/form-number/form-number.
 
     FadeInDownDirective, FadeInDownBigDirective, FadeInDirective,
 
-    
+
     FormContainerCenterComponent, FormLabelComponent, FormTextComponent, FormPasswordComponent, FormButtonComponent, FormTitleComponent,
     FormSearchbarComponent, FormSelectComponent,
 
@@ -62,7 +64,7 @@ import { FormNumberComponent } from './Components/Forms/form-number/form-number.
     ConfirmComponent,
     IzmjenaBankomataComponent,
     PretragaBankomataComponent,
-    FormNumberComponent,
+    FormNumberComponent, MapComponent, ATMDetailsComponent,
   ],
   imports: [
     BrowserModule,

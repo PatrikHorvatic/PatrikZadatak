@@ -9,6 +9,9 @@ import { BankService } from 'src/app/Services/bank.service';
 })
 export class UserComponent implements OnInit {
 
+  public pokaziDetaljeBankomata: boolean = false;
+  public atmDetails!: ATM;
+
   public loadingComplete!: boolean;
 
   public listATM!: Array<ATM>;
@@ -16,7 +19,7 @@ export class UserComponent implements OnInit {
   constructor(private bankService: BankService) { }
 
   ngOnInit(): void {
-    
+
     this.loadingComplete = false;
     this.listATM = [];
 
@@ -28,19 +31,25 @@ export class UserComponent implements OnInit {
 
     this.bankService.dohvatiListuBankomata()
       .then(atmList => {
-        this.loadingComplete = true;
         this.listATM = atmList;
+        this.loadingComplete = true;
         console.log(atmList);
 
       })
       .catch(error => {
         this.loadingComplete = true;
         console.log(error);
-
       })
       .finally(() => {
 
       });
+
+  }
+
+  public prikaziProzorSDetaljimaBankomata(e: number) {
+
+    this.atmDetails = this.listATM[e];
+    this.pokaziDetaljeBankomata = true;
 
   }
 

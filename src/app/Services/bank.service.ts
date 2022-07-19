@@ -12,107 +12,122 @@ export class BankService {
     {
       redniBroj: 1,
       vrstaBankomata: ATMType.BESKONTAKTNI,
-      adresa: "",
+      adresa: "Savska cesta 37",
+      lokacija: { lat: 45.800776414906764, lng: 15.963268876637734 },
       napomena: null,
     },
 
     {
       redniBroj: 2,
       vrstaBankomata: ATMType.DNEVNO_NOCNI,
-      adresa: "",
+      adresa: "Ulica grada Vukovara, 41",
+      lokacija: { lat: 45.79997449565077, lng: 15.971547754796752 },
       napomena: null,
     },
 
-    {
-      redniBroj: 3,
-      vrstaBankomata: ATMType.KOVINOMAT,
-      adresa: "",
-      napomena: null,
-    },
+    // {
+    //   redniBroj: 3,
+    //   vrstaBankomata: ATMType.KOVINOMAT,
+    //   adresa: "",
+    //   lokacija: { lat: , lng: },
+    //   napomena: null,
+    // },
 
-    {
-      redniBroj: 4,
-      vrstaBankomata: ATMType.TREZOR,
-      adresa: "",
-      napomena: null,
-    },
+    // {
+    //   redniBroj: 4,
+    //   vrstaBankomata: ATMType.TREZOR,
+    //   adresa: "",
+    //   lokacija: { lat: , lng: },
+    //   napomena: null,
+    // },
 
-    {
-      redniBroj: 5,
-      vrstaBankomata: ATMType.UPLATNO_ISPLATNI,
-      adresa: "",
-      napomena: null,
-    },
+    // {
+    //   redniBroj: 5,
+    //   vrstaBankomata: ATMType.UPLATNO_ISPLATNI,
+    //   adresa: "",
+    //   lokacija: { lat: , lng: },
+    //   napomena: null,
+    // },
 
-    {
-      redniBroj: 6,
-      vrstaBankomata: ATMType.KOVINOMAT,
-      adresa: "",
-      napomena: null,
-    },
+    // {
+    //   redniBroj: 6,
+    //   vrstaBankomata: ATMType.KOVINOMAT,
+    //   adresa: "",
+    //   lokacija: { lat: , lng: },
+    //   napomena: null,
+    // },
 
-    {
-      redniBroj: 7,
-      vrstaBankomata: ATMType.TREZOR,
-      adresa: "",
-      napomena: null,
-    },
+    // {
+    //   redniBroj: 7,
+    //   vrstaBankomata: ATMType.TREZOR,
+    //   adresa: "",
+    //   lokacija: { lat: , lng: },
+    //   napomena: null,
+    // },
 
-    {
-      redniBroj: 8,
-      vrstaBankomata: ATMType.BESKONTAKTNI,
-      adresa: "",
-      napomena: null,
-    },
+    // {
+    //   redniBroj: 8,
+    //   vrstaBankomata: ATMType.BESKONTAKTNI,
+    //   adresa: "",
+    //   lokacija: { lat: , lng: },
+    //   napomena: null,
+    // },
 
-    {
-      redniBroj: 9,
-      vrstaBankomata: ATMType.BESKONTAKTNI,
-      adresa: "",
-      napomena: null,
-    },
+    // {
+    //   redniBroj: 9,
+    //   vrstaBankomata: ATMType.BESKONTAKTNI,
+    //   adresa: "",
+    //   lokacija: { lat: , lng: },
+    //   napomena: null,
+    // },
 
-    {
-      redniBroj: 10,
-      vrstaBankomata: ATMType.BESKONTAKTNI,
-      adresa: "",
-      napomena: null,
-    },
+    // {
+    //   redniBroj: 10,
+    //   vrstaBankomata: ATMType.BESKONTAKTNI,
+    //   adresa: "",
+    //   lokacija: { lat: , lng: },
+    //   napomena: null,
+    // },
 
-    {
-      redniBroj: 11,
-      vrstaBankomata: ATMType.BESKONTAKTNI,
-      adresa: "",
-      napomena: ATMState.IZVAN_FUNKCIJE,
-    },
+    // {
+    //   redniBroj: 11,
+    //   vrstaBankomata: ATMType.BESKONTAKTNI,
+    //   adresa: "",
+    //   lokacija: { lat: , lng: },
+    //   napomena: ATMState.IZVAN_FUNKCIJE,
+    // },
 
-    {
-      redniBroj: 12,
-      vrstaBankomata: ATMType.UPLATNO_ISPLATNI,
-      adresa: "",
-      napomena: null,
-    },
+    // {
+    //   redniBroj: 12,
+    //   vrstaBankomata: ATMType.UPLATNO_ISPLATNI,
+    //   adresa: "",
+    //   lokacija: { lat: , lng: },
+    //   napomena: null,
+    // },
 
-    {
-      redniBroj: 13,
-      vrstaBankomata: ATMType.BESKONTAKTNI,
-      adresa: "",
-      napomena: null,
-    },
+    // {
+    //   redniBroj: 13,
+    //   vrstaBankomata: ATMType.BESKONTAKTNI,
+    //   adresa: "",
+    //   lokacija: { lat: , lng: },
+    //   napomena: null,
+    // },
 
-    {
-      redniBroj: 14,
-      vrstaBankomata: ATMType.TREZOR,
-      adresa: "",
-      napomena: ATMState.IZVAN_FUNKCIJE,
-    },
+    // {
+    //   redniBroj: 14,
+    //   vrstaBankomata: ATMType.TREZOR,
+    //   adresa: "",
+    //   lokacija: { lat: , lng: },
+    //   napomena: ATMState.IZVAN_FUNKCIJE,
+    // },
 
-    {
-      redniBroj: 15,
-      vrstaBankomata: ATMType.DNEVNO_NOCNI,
-      adresa: "",
-      napomena: null,
-    }
+    // {
+    //   redniBroj: 15,
+    //   vrstaBankomata: ATMType.DNEVNO_NOCNI,
+    //   adresa: "",
+    //   lokacija: { lat: , lng: },
+    //   napomena: null,
+    // }
   ];
 
   constructor() { }
@@ -153,6 +168,7 @@ export class BankService {
           redniBroj: rednibroj,
           vrstaBankomata: odabranaVrstaBankomata,
           adresa: adresa,
+          lokacija: null,
           napomena: null
         });
 

@@ -1,0 +1,11 @@
+<div class="zatvori-modal-gumb-container">
+  <i class="fas fa-times" (click)="Sakrij()"></i>
+</div>
+<div class="atm-info-container">
+
+  <h3 *ngIf="atmDetails">Redni broj: {{atmDetails.redniBroj}}</h3>
+  <h3 *ngIf="atmDetails">Adresa: {{atmDetails.adresa}}</h3>
+  <h3 *ngIf="atmDetails">Vrsta bankomata: {{atmDetails.vrstaBankomata}}</h3>
+  <h3 *ngIf="atmDetails">Napomena: {{atmDetails.napomena}}</h3>
+
+</div>
